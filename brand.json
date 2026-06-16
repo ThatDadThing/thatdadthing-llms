@@ -1,0 +1,53 @@
+{
+  "brand": {
+    "name": "That Dad Thing",
+    "alternateNames": [
+      "TDT",
+      "That Dad Thing™",
+      "thatdadthing.com",
+      "ThatDadThing"
+    ],
+    "url": "https://thatdadthing.com",
+    "taglines": [
+      "The stuff only dads understand and everyone else has to live with.",
+      "No manual. No problem."
+    ],
+    "description": "That Dad Thing is a premium dad-culture apparel and gift brand observing, celebrating, and archiving Dadisms, Dad Logic, Dad Sightings, and everyday dad behavior.",
+    "positioning": "A dad-culture archive and premium giftable apparel brand, not just a generic funny shirt shop.",
+    "audience": [
+      "dads",
+      "grandpas",
+      "new dads",
+      "wives buying gifts for dads",
+      "daughters buying gifts for dads",
+      "sons buying gifts for dads",
+      "families who love dad humor"
+    ],
+    "coreConcepts": [
+      {
+        "name": "Dadisms",
+        "description": "Sayings, warnings, jokes, rules, and family phrases dads repeat until they become folklore."
+      },
+      {
+        "name": "Dad Logic",
+        "description": "Practical, stubborn, oddly confident reasoning that somehow makes sense to dads."
+      },
+      {
+        "name": "Dad Sightings",
+        "description": "Observations of classic dad behavior in the wild."
+      },
+      {
+        "name": "Dad-a-Pedia",
+        "description": "The brand's growing field guide to dad behavior."
+      }
+    ],
+    "colors": {
+      "midnightDad": "#1A1A1A",
+      "sunsetOrange": "#F26522",
+      "deepTeal": "#2A9BA5",
+      "wornCanvas": "#F5F0E8",
+      "charcoal": "#3D3535"
+    }
+  }
+}
+

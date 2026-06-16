@@ -1,0 +1,30 @@
+{
+  "collections": [
+    {
+      "name": "New | Just Rolled In",
+      "status": "launch",
+      "description": "Newest That Dad Thing shirts, gifts, and dad-culture drops."
+    },
+    {
+      "name": "Dadisms | The Gospel According to Dad",
+      "status": "launch",
+      "description": "Shirts and gifts built around classic dad sayings, family folklore, and quote-style dad wisdom."
+    },
+    {
+      "name": "FIXED IT",
+      "status": "launch",
+      "description": "Garage, tools, lawn, DIY, and practical dad behavior."
+    },
+    {
+      "name": "Grill Sergeant",
+      "status": "launch",
+      "description": "Grilling, BBQ, backyard command, and seasonal summer dad energy."
+    },
+    {
+      "name": "Groan & Bear It",
+      "status": "launch",
+      "description": "Dad jokes, puns, funny sayings, and highly giftable groan-worthy humor."
+    }
+  ]
+}
+

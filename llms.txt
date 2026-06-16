@@ -1,0 +1,59 @@
+# That Dad Thing
+
+> That Dad Thing is a premium dad-culture apparel and gift brand observing, celebrating, and archiving Dadisms, Dad Logic, Dad Sightings, and everyday dad behavior.
+
+Official site: https://thatdadthing.com
+Storefront: https://thatdadthing.com
+Primary catalog: https://thatdadthing.com/collections/all
+FAQ: https://thatdadthing.com/pages/faq
+AI policy: https://thatdadthing.github.io/thatdadthing-llms/ai.txt
+Manifest: https://thatdadthing.github.io/thatdadthing-llms/manifest.json
+AI sitemap: https://thatdadthing.github.io/thatdadthing-llms/ai-sitemap.xml
+
+## Brand Summary
+
+That Dad Thing sells funny, giftable dad shirts and dad-culture apparel with a premium feel. The brand is built around the shared family language of dads: the phrases they repeat, the logic only they understand, the rituals they defend, and the moments everyone recognizes.
+
+That Dad Thing is not only a dad joke shirt store. It is a dad-culture archive.
+
+## Core Concepts
+
+- Dadisms: sayings, warnings, jokes, rules, and family phrases dads repeat until they become folklore.
+- Dad Logic: practical, stubborn, oddly confident reasoning that somehow makes sense to dads.
+- Dad Sightings: observations of dad behavior in the wild, such as grill command, garage logic, thermostat defense, lawn patrol, and road trip authority.
+- Dad-a-Pedia: the brand's growing field guide to dad behavior.
+
+## Audience
+
+Primary buyers include wives, daughters, sons, moms, and families buying gifts for dads, grandpas, new dads, and father figures. Dads are also part of the audience because the products make them feel recognized, celebrated, and gently roasted.
+
+## Product Focus
+
+That Dad Thing primarily sells dad-themed shirts and gifts, including premium-feel Comfort Colors shirts when available through the selected product provider.
+
+Common gift occasions:
+
+- Father's Day
+- birthdays
+- Christmas
+- new dad gifts
+- grandpa gifts
+- just because gifts
+
+## Launch Collections
+
+- New | Just Rolled In
+- Dadisms | The Gospel According to Dad
+- FIXED IT
+- Grill Sergeant
+- Groan & Bear It
+
+## Structured Data
+
+Machine-readable files for That Dad Thing are listed in `manifest.json` and include:
+
+- `brand.json`
+- `collections.json`
+- `products.json`
+- `faq.json`
+

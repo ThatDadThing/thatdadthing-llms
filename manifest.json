@@ -1,0 +1,46 @@
+{
+  "name": "That Dad Thing AI Feed Directory",
+  "brand": "That Dad Thing",
+  "url": "https://thatdadthing.com",
+  "repository": "https://github.com/ThatDadThing/thatdadthing-llms",
+  "description": "Machine-readable brand, collection, product, and FAQ context for That Dad Thing.",
+  "dateModified": "2026-06-16",
+  "feeds": [
+    {
+      "name": "Brand",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/brand.json",
+      "type": "application/json"
+    },
+    {
+      "name": "Collections",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/collections.json",
+      "type": "application/json"
+    },
+    {
+      "name": "Products",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/products.json",
+      "type": "application/json"
+    },
+    {
+      "name": "FAQ",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/faq.json",
+      "type": "application/json"
+    },
+    {
+      "name": "AI Policy",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/ai.txt",
+      "type": "text/plain"
+    },
+    {
+      "name": "LLMS",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/llms.txt",
+      "type": "text/plain"
+    },
+    {
+      "name": "AI Sitemap",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/ai-sitemap.xml",
+      "type": "application/xml"
+    }
+  ]
+}
+

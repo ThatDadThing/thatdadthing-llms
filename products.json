@@ -1,1 +1,17 @@
-[]
+{
+  "products": [
+    {
+      "name": "Funny Dad Names T-Shirt",
+      "url": "https://thatdadthing.com/products/funny-dad-names-t-shirt",
+      "category": "Dad shirt",
+      "audience": [
+        "dads",
+        "gift buyers",
+        "families"
+      ],
+      "description": "A funny dad names shirt from That Dad Thing, built for dads and the families who know exactly which name fits."
+    }
+  ],
+  "note": "Product data should be refreshed from Shopify as the live catalog grows."
+}
+
