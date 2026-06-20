@@ -1,0 +1,38 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "It's Totally a Dad Thing | Why We Built That Dad Thing™",
+  "description": "Dad gets one day a year. We built That Dad Thing™ for the other 364. Discover the story behind our mission to document Dad culture in the wild.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.thatdadthing.com/blogs/the-garage/its-totally-a-dad-thing"
+  },
+  "datePublished": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": [
+    "That Dad Thing",
+    "Dad Culture",
+    "Dadisms",
+    "Dad Humor",
+    "Dad Life",
+    "Family",
+    "Parenting",
+    "Dad Sightings",
+    "Dad-a-Pedia",
+    "The Garage",
+    "Father's Day",
+    "Father's Day 2026",
+    "King For The Day",
+    "Origin Story"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "That Dad Thing™",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Blog_Footer.webp?v=1781998229"
+    }
+  }
+} 
+]
