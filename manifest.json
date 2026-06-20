@@ -4,7 +4,7 @@
   "url": "https://thatdadthing.com",
   "repository": "https://github.com/ThatDadThing/thatdadthing-llms",
   "description": "Machine-readable brand, collection, product, and FAQ context for That Dad Thing.",
-  "dateModified": "2026-06-16",
+  "dateModified": "2026-06-20",
   "feeds": [
     {
       "name": "Brand",
@@ -22,9 +22,9 @@
       "type": "application/json"
     },
     {
-  "name": "The Garage Blog",
-  "url": "https://thatdadthing.github.io/thatdadthing-llms/blog.json",
-  "type": "application/json"
+      "name": "The Garage Blog",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/blog.json",
+      "type": "application/json"
     },
     {
       "name": "FAQ",
@@ -48,4 +48,3 @@
     }
   ]
 }
-
