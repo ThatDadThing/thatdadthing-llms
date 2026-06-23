@@ -2,6 +2,53 @@
  {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
+  "headline": "Jokes Don't Solve Problems | The Purpose of Dad Humor",
+  "description": "Humor doesn't make problems disappear, but it can change the atmosphere. A reflection on dad jokes, resilience, responsibility, and why a laugh is needed.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.thatdadthing.com/blogs/the-garage/the-joke-doesnt-solve-the-problem"
+  },
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "keywords": [
+  "dad humor",
+  "dad life",
+  "fatherhood",
+  "dad wisdom",
+  "dadisms",
+  "life lessons",
+  "parenting",
+  "family humor",
+  "funny dads",
+  "dad jokes",
+  "resilience",
+  "optimism",
+  "family life",
+  "everyday dad",
+  "humor and hope",
+  "modern fatherhood",
+  "responsibility",
+  "stress relief",
+  "encouragement",
+  "that dad thing",
+  "fathers day",
+  "family stories",
+  "relatable humor",
+  "positive mindset",
+  "dad perspective"
+],
+  "publisher": {
+    "@type": "Organization",
+    "name": "That Dad Thing™",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Blog_Footer.webp?v=1781998229"
+    }
+  }
+}, 
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
   "headline": "It's Totally a Dad Thing | Why We Built That Dad Thing™",
   "description": "Dad gets one day a year. We built That Dad Thing™ for the other 364. Discover the story behind our mission to document Dad culture in the wild.",
   "mainEntityOfPage": {
