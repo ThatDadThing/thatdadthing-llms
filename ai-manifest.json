@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "name": "That Dad Thing AI Feed Directory",
+  "url": "https://www.thatdadthing.com",
+  "repository": "https://github.com/ThatDadThing/thatdadthing-llms",
+  "description": "Supplementary public catalog and brand context. Prefer current storefront pages for purchases.",
+  "feeds": [
+    {
+      "name": "products",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/products.json",
+      "type": "application/json"
+    },
+    {
+      "name": "collections",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/collections.json",
+      "type": "application/json"
+    },
+    {
+      "name": "blog",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/blog.json",
+      "type": "application/json"
+    },
+    {
+      "name": "dadapedia",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/dadapedia.json",
+      "type": "application/json"
+    },
+    {
+      "name": "blogcatalog",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/blogcatalog.json",
+      "type": "application/json"
+    },
+    {
+      "name": "faq",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/faq.json",
+      "type": "application/json"
+    },
+    {
+      "name": "brand",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/brand.json",
+      "type": "application/json"
+    },
+    {
+      "name": "brandvoice",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/brandvoice.json",
+      "type": "application/json"
+    },
+    {
+      "name": "llms.txt",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/llms.txt",
+      "type": "text/plain"
+    },
+    {
+      "name": "ai.txt",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/ai.txt",
+      "type": "text/plain"
+    },
+    {
+      "name": "ai-sitemap.xml",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/ai-sitemap.xml",
+      "type": "application/xml"
+    },
+    {
+      "name": "health.json",
+      "url": "https://thatdadthing.github.io/thatdadthing-llms/health.json",
+      "type": "application/json"
+    }
+  ]
+}

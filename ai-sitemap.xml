@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/llms.txt</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/ai.txt</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/manifest.json</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/brand.json</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/collections.json</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/products.json</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/blog.json</loc>
-  </url>
-  <url>
-    <loc>https://thatdadthing.github.io/thatdadthing-llms/faq.json</loc>
-  </url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/products.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/collections.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/blog.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/dadapedia.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/blogcatalog.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/faq.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/brand.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/brandvoice.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/manifest.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/ai-manifest.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/health.json</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/llms.txt</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/ai.txt</loc></url>
+  <url><loc>https://thatdadthing.github.io/thatdadthing-llms/ai-sitemap.xml</loc></url>
 </urlset>
-

@@ -1,37 +1,81 @@
 {
+  "schemaVersion": 1,
+  "source": "https://www.thatdadthing.com",
   "faqs": [
     {
       "question": "What is That Dad Thing?",
-      "answer": "That Dad Thing is a dad-focused apparel and gift brand built around Dadisms, Dad Logic, Dad Sightings, and the funny everyday behavior families recognize immediately."
+      "answer": "That Dad Thing is a dad-first apparel and humor brand observing, celebrating, and archiving dad behavior. Dadisms, Dad Logic, Dad Sightings, garage wisdom, grill authority, thermostat opinions - all of it.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
       "question": "Who is That Dad Thing for?",
-      "answer": "That Dad Thing is for dads and for the wives, daughters, sons, moms, and families who love buying gifts that make dads feel seen."
+      "answer": "That Dad Thing is for dads, grandpas, bonus dads, new dads, future dads, and the families who know exactly which shirt belongs to which one.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
-      "question": "What kind of shirts does That Dad Thing sell?",
-      "answer": "That Dad Thing sells funny, giftable dad shirts with a premium feel, including Comfort Colors styles when available through the selected product provider."
+      "question": "What makes That Dad Thing different?",
+      "answer": "We're not just making \"dad joke\" shirts. We're building a living archive of dad behavior: the warnings, rituals, rules, sayings, hobbies, and extremely specific opinions that make dads instantly recognizable.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
-      "question": "What are Dadisms?",
-      "answer": "Dadisms are the sayings, warnings, rules, jokes, and family folklore dads repeat until everyone rolls their eyes and secretly remembers them forever."
+      "question": "What is Dad-a-Pedia?",
+      "answer": "Dad-a-Pedia is our field guide to dad culture. It's where Dadisms, Dad Logic, Dad Sightings, and documented dad behavior live. Think of it as a slightly unreasonable encyclopedia of things dads say, do, fix, over-explain, and defend with confidence.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
-      "question": "What are Dad Sightings?",
-      "answer": "Dad Sightings are observations of classic dad behavior in the wild, from grill command decisions to garage logic, lawn patrol, thermostat defense, and other unmistakable dad moments."
+      "question": "What kind of shirts do you sell?",
+      "answer": "We sell premium-feel graphic tees built around dad humor, dad behavior, and family-recognizable moments. The goal is simple: shirts dads will actually wear and families will actually laugh about.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
-      "question": "Why is That Dad Thing different from a regular funny t-shirt shop?",
-      "answer": "That Dad Thing is not only selling jokes on shirts. It is building a dad-culture archive around the behavior, phrases, and rituals families already laugh about together."
+      "question": "What shirts do you print on?",
+      "answer": "Many That Dad Thing shirts are printed on Comfort Colors C1717 tees, known for their soft garment-dyed feel, relaxed fit, and lived-in comfort. Product details may vary by item, so check each product page for the exact shirt style, color, and sizing information.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
-      "question": "Are the shirts made before I order?",
-      "answer": "Most That Dad Thing shirts are printed on demand after purchase, which helps keep designs fresh while avoiding unnecessary inventory."
+      "question": "Are your shirts printed on demand?",
+      "answer": "Yes. Most shirts are printed after purchase. That helps us keep the catalog fresh, reduce unnecessary inventory, and release more designs without guessing which dad behavior will need documenting next.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     },
     {
-      "question": "Is That Dad Thing good for Father's Day gifts?",
-      "answer": "Yes. That Dad Thing is built for Father's Day, birthdays, Christmas, new dad gifts, grandpa gifts, and the highly underrated just because he will laugh gift."
+      "question": "How long does shipping take?",
+      "answer": "Most orders are printed after purchase and typically ship within 5-7 business days. Once shipped, delivery timing depends on the carrier and destination. You'll receive tracking when your order is on the way.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "Do you accept returns?",
+      "answer": "Yes. We offer a 100% satisfaction guarantee for 30 days after delivery. No questions asked. Contact us at NeedsDuctTape@ThatDadThing.com with your order number, and we will help with a refund or exchange.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "Can I exchange for a different size or color?",
+      "answer": "Yes. Contact us within 30 days after delivery at NeedsDuctTape@ThatDadThing.com with your order number. We will help with your exchange and provide instructions directly.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "Is it That Dad Thing or thatdadthing?",
+      "answer": "The brand is That Dad Thing. The website is ThatDadThing.com. The behavior is universal and usually happens near a garage, grill, thermostat, lawn, toolbox, driveway, or family vacation itinerary.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "Can I submit a Dadism or Dad Sighting?",
+      "answer": "That's the plan. We're building toward community submissions for Dadisms, Dad Logic, and Dad Sightings. Until then, keep a note in your phone. If your dad says \"we'll leave at 7\" and starts loading the car at 5:42, that belongs in the archive.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "Do real dads help shape the designs?",
+      "answer": "Absolutely. The brand is built from real dad behavior, family stories, things overheard in kitchens and garages, and the kind of logic that somehow makes perfect sense if you've owned the same extension cord for 19 years.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "Is That Dad Thing only for dads?",
+      "answer": "Nope. It's for anyone who recognizes the behavior. Moms, kids, spouses, siblings, grandparents, friends, and gift-givers are all welcome. If a shirt immediately makes you think of someone, that's probably the one.",
+      "source": "https://www.thatdadthing.com/pages/faq"
+    },
+    {
+      "question": "What is That Dad Thing's tone?",
+      "answer": "Warm, observant, funny, and just a little too accurate. We laugh with dads, not at them. Mostly. Unless they're defending a drawer full of mystery cables, in which case the archive demands honesty.",
+      "source": "https://www.thatdadthing.com/pages/faq"
     }
   ]
 }
-

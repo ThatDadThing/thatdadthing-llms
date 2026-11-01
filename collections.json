@@ -1,30 +1,158 @@
 {
+  "schemaVersion": 1,
+  "source": "https://www.thatdadthing.com",
   "collections": [
     {
-      "name": "New | Just Rolled In",
-      "status": "launch",
-      "description": "Newest That Dad Thing shirts, gifts, and dad-culture drops."
+      "id": "352784974016",
+      "name": "⚡ Fully Charged, Rarely Useful",
+      "url": "https://www.thatdadthing.com/collections/%E2%9A%A1-fully-charged-rarely-useful",
+      "description": "",
+      "productCount": 1,
+      "dateModified": "2026-09-16T13:48:21-04:00"
     },
     {
-      "name": "Dadisms | The Gospel According to Dad",
-      "status": "launch",
-      "description": "Shirts and gifts built around classic dad sayings, family folklore, and quote-style dad wisdom."
+      "id": "352785236160",
+      "name": "❤️ One Day a Year They Appreciate Us",
+      "url": "https://www.thatdadthing.com/collections/%E2%9D%A4%EF%B8%8F-one-day-a-year-they-appreciate-us",
+      "description": "",
+      "productCount": 1,
+      "dateModified": "2026-09-16T10:09:25-04:00"
     },
     {
-      "name": "FIXED IT",
-      "status": "launch",
-      "description": "Garage, tools, lawn, DIY, and practical dad behavior."
+      "id": "352793592000",
+      "name": "🍼 No Manual. No Problem.",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%8D%BC-no-manual-no-problem",
+      "description": "",
+      "productCount": 0,
+      "dateModified": "2026-07-08T16:42:15-04:00"
     },
     {
-      "name": "Grill Sergeant",
-      "status": "launch",
-      "description": "Grilling, BBQ, backyard command, and seasonal summer dad energy."
+      "id": "352793559232",
+      "name": "🍼 Send Coffee. And Sleep.",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%8D%BC-send-coffee-and-sleep",
+      "description": "",
+      "productCount": 1,
+      "dateModified": "2026-10-23T07:00:05-04:00"
     },
     {
-      "name": "Groan & Bear It",
-      "status": "launch",
-      "description": "Dad jokes, puns, funny sayings, and highly giftable groan-worthy humor."
+      "id": "352793690304",
+      "name": "🎁 Finally, Something He'll Actually Use",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%8E%81-finally-something-hell-actually-use",
+      "description": "",
+      "productCount": 1,
+      "dateModified": "2026-09-16T10:10:17-04:00"
+    },
+    {
+      "id": "352785203392",
+      "name": "🎄 Dad's Favorite Season to Complain About",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%8E%84-dads-favorite-season-to-complain-about",
+      "description": "",
+      "productCount": 1,
+      "dateModified": "2026-10-22T12:48:21-04:00"
+    },
+    {
+      "id": "352793657536",
+      "name": "🏅 Most Likely to Be Regifted (But Won't Be)",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%8F%85-most-likely-to-be-regifted-but-wont-be",
+      "description": "",
+      "productCount": 0,
+      "dateModified": "2026-07-08T16:42:15-04:00"
+    },
+    {
+      "id": "352785137856",
+      "name": "🏆 Loudest Fan in the Bleachers",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%8F%86-loudest-fan-in-the-bleachers",
+      "description": "",
+      "productCount": 0,
+      "dateModified": "2026-07-08T16:42:15-04:00"
+    },
+    {
+      "id": "352793624768",
+      "name": "👴 Leveled Up",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%91%B4-leveled-up",
+      "description": "",
+      "productCount": 0,
+      "dateModified": "2026-07-08T16:42:15-04:00"
+    },
+    {
+      "id": "352785072320",
+      "name": "💪 Peak Physical Comedy",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%92%AA-peak-physical-comedy",
+      "description": "",
+      "productCount": 0,
+      "dateModified": "2026-07-08T16:42:15-04:00"
+    },
+    {
+      "id": "352785006784",
+      "name": "📖 The Gospel According to Dad",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%93%96-the-gospel-according-to-dad",
+      "description": "",
+      "productCount": 7,
+      "dateModified": "2026-10-29T07:01:33-04:00"
+    },
+    {
+      "id": "352785105088",
+      "name": "🔧 I'll Fix It This Weekend",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%94%A7-ill-fix-it-this-weekend",
+      "description": "",
+      "productCount": 2,
+      "dateModified": "2026-09-30T07:00:04-04:00"
+    },
+    {
+      "id": "352785170624",
+      "name": "🚗 Are We There Yet? (No.)",
+      "url": "https://www.thatdadthing.com/collections/%F0%9F%9A%97-are-we-there-yet-no",
+      "description": "",
+      "productCount": 4,
+      "dateModified": "2026-10-27T07:56:37-04:00"
+    },
+    {
+      "id": "315543060672",
+      "name": "📚 The Full Dad-a-Log™",
+      "url": "https://www.thatdadthing.com/collections/all",
+      "description": "The complete collection of Dadisms, questionable wisdom, and wearable evidence.",
+      "productCount": 336,
+      "dateModified": "2026-10-30T07:00:05-04:00"
+    },
+    {
+      "id": "352784941248",
+      "name": "🧠 Because I Said So",
+      "url": "https://www.thatdadthing.com/collections/because-i-said-so",
+      "description": "",
+      "productCount": 4,
+      "dateModified": "2026-10-16T07:00:08-04:00"
+    },
+    {
+      "id": "482090680512",
+      "name": "⚠️ Dad at Play",
+      "url": "https://www.thatdadthing.com/collections/dad-at-play",
+      "description": "Dad said it was just for fun. The Dad at Play collection puts the yellow DAD AT PLAY warning sign on funny sports dad T-shirts for backyard legends and family MVPs. Each activity gets its own figure, with the same fair warning: Dad has entered the game.",
+      "productCount": 4,
+      "dateModified": "2026-10-30T07:00:05-04:00"
+    },
+    {
+      "id": "352721109184",
+      "name": "😄 Groan & Bear It",
+      "url": "https://www.thatdadthing.com/collections/dad-jokes",
+      "description": "",
+      "productCount": 16,
+      "dateModified": "2026-10-29T16:33:31-04:00"
+    },
+    {
+      "id": "352785039552",
+      "name": "🔥 Grill Sergeant",
+      "url": "https://www.thatdadthing.com/collections/grill-sergeant",
+      "description": "",
+      "productCount": 1,
+      "dateModified": "2026-07-08T17:04:41-04:00"
+    },
+    {
+      "id": "482236039360",
+      "name": "New | 🚗 Just Rolled In",
+      "url": "https://www.thatdadthing.com/collections/just-rolled-in",
+      "description": "",
+      "productCount": 21,
+      "dateModified": "2026-10-30T07:22:06-04:00"
     }
   ]
 }
-
