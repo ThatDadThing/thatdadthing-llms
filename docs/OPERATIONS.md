@@ -55,4 +55,3 @@ property and authorized account, inspect representative URLs and sitemap status,
 baseline. Never use EDUHaHa property statistics as TDT evidence. No Search Console access or AI citations
 are claimed by this build. Record periodic reproducible AI discovery prompts, date/platform, observed
 mentions/citations and exact links without treating one result as universal visibility.
-

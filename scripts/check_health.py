@@ -74,4 +74,3 @@ if __name__ == "__main__":
         baseline(args.baseline, args.bootstrap)
     else:
         check(args.max_age_hours, args.expected)
-

@@ -37,4 +37,3 @@ must be byte-identical.
 
 Prices, inventory and variant offers are intentionally omitted: live storefront pages own current
 buying information. This feed does not represent a Merchant Center submission or acceptance.
-

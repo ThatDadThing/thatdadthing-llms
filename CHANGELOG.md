@@ -9,4 +9,3 @@
 - Add regression tests, gated two-hour Pages refresh, stale-feed checks and rollback artifacts.
 - Stage a separate narrow Shopify discovery patch; no live theme, release or account configuration changes.
 - Preserve public no-training preference; omit private content, prices and inventory claims.
-

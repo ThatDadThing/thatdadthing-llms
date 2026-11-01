@@ -44,4 +44,3 @@ as historical files and are not part of the new deployment artifact.
 
 See [data contract](docs/DATA_CONTRACT.md), [operations](docs/OPERATIONS.md) and
 [change log](CHANGELOG.md). Implementation is staged; deployment needs approval.
-
