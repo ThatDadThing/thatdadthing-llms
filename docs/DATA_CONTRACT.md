@@ -37,3 +37,7 @@ must be byte-identical.
 
 Prices, inventory and variant offers are intentionally omitted: live storefront pages own current
 buying information. This feed does not represent a Merchant Center submission or acceptance.
+
+## Collection publication gate - November 2, 2026
+
+Include a collection only when its paginated public membership has at least one product in the verified public catalog. Draft-only or empty collections are held. productCount equals the number of unique productIds, all of which must exist in products.json. Administrative totals are not publication evidence. health.json records examined/included/excludedEmpty counts without advertising held collection identities. A fully empty eligible collection set is valid and publishes no collection records. Existing Shopify collection publication settings are not changed.

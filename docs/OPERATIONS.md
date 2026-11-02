@@ -55,3 +55,7 @@ property and authorized account, inspect representative URLs and sitemap status,
 baseline. Never use EDUHaHa property statistics as TDT evidence. No Search Console access or AI citations
 are claimed by this build. Record periodic reproducible AI discovery prompts, date/platform, observed
 mentions/citations and exact links without treating one result as universal visibility.
+
+## Mandatory collection gate
+
+Before deployment, verify every included collection has at least one current public catalog product. Empty and draft-only collections are excluded automatically on each rebuild. Do not publish or activate a collection to satisfy feed coverage. Existing published empty Shopify collections require a separate explicit decision before unpublishing.

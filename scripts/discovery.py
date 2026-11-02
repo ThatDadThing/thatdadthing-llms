@@ -211,6 +211,23 @@ def public_products(source, sitemap):
     require(expected == set(records), "Product sitemap/catalog mismatch; refuse partial or unlisted export")
     return records
 
+def collection_products(source, url, published_product_ids):
+    """Resolve actual public membership; an administrative total can include drafts."""
+    ids = set()
+    for page in range(1, 101):
+        payload = json.loads(source.get(url + "/products.json?limit=250&page=" + str(page)))
+        require(isinstance(payload.get("products"), list), "Invalid public collection membership")
+        batch = payload["products"]
+        for product in batch:
+            identity = str(product["id"])
+            require(identity not in ids, "Duplicate public collection member")
+            require(identity in published_product_ids, "Collection member missing from public catalog")
+            ids.add(identity)
+        if len(batch) < 250:
+            return sorted(ids)
+    raise Failure("Collection pagination exceeded safety limit")
+
+
 def article_record(url, doc, lastmod, now):
     articles = []
     for script in doc.scripts:
@@ -259,13 +276,19 @@ def build(source, as_of):
             "category": copy_text(p.get("product_type")),
             "datePublished": p["published_at"], "dateModified": p["updated_at"]})
     collections = []
+    excluded_empty = 0
+    published_product_ids = {str(p['id']) for p in product_data.values()}
     for url in collection_urls:
         p = json.loads(source.get(url + ".json"))["collection"]
         require(canonical(SITE + "/collections/" + p["handle"]) == url, "Collection identity mismatch")
         require(timestamp(p.get("published_at")) <= now, "Future collection")
+        member_ids = collection_products(source, url, published_product_ids)
+        if not member_ids:
+            excluded_empty += 1
+            continue
         collections.append({"id": str(p["id"]), "name": " ".join(p["title"].split()), "url": url,
-            "description": copy_text(p.get("description")), "productCount": p["products_count"],
-            "dateModified": p["updated_at"]})
+            "description": copy_text(p.get("description")), "productCount": len(member_ids),
+            "productIds": member_ids, "dateModified": p["updated_at"]})
     articles = [article_record(u, docs[u], sitemap[u], now) for u in article_urls]
     faq = [{"question": copy_text(x["question"]), "answer": copy_text(x["answer"]),
             "source": SITE + "/pages/faq"} for x in docs[SITE + "/pages/faq"].details]
@@ -315,7 +338,8 @@ def build(source, as_of):
     bundle["health.json"] = {"schemaVersion": 1, "generatedAt": as_of, "sourceFingerprint": source_digest,
         "sourceSnapshotStartedAt": min(getattr(source, "captured", {}).values(), default=as_of),
         "sourceSnapshotFinishedAt": max(getattr(source, "captured", {}).values(), default=as_of),
-        "counts": counts, "coverage": "Exact product and article sitemap reconciliation",
+        "counts": counts, "coverage": "Exact product and article sitemap reconciliation; collections require verified public product membership",
+        "collectionEligibility": {"examined": len(collection_urls), "included": len(collections), "excludedEmpty": excluded_empty},
         "sourceURLs": dict(sorted(source.lineage.items()))}
     bundle["llms.txt"] = (
         "# That Dad Thing\n\n> " + brand["description"] + "\n\n"
@@ -366,6 +390,19 @@ def validate(bundle):
             for k, value in row.items():
                 if isinstance(value, str) and not (filename == "collections.json" and k == "name"):
                     require(all(32 <= ord(c) <= 126 for c in value), "Non-ASCII or multiline field: " + filename + "/" + k)
+    public_ids = {row["id"] for row in bundle["products.json"]["products"]}
+    for collection in bundle["collections.json"]["collections"]:
+        members = collection.get("productIds")
+        require(isinstance(members, list) and len(members) > 0, "Empty collection cannot be published")
+        require(len(members) == len(set(members)) and set(members) <= public_ids,
+                "Invalid public collection membership")
+        require(type(collection.get("productCount")) is int and collection["productCount"] == len(members),
+                "Collection product count disagrees")
+    eligibility = bundle["health.json"].get("collectionEligibility", {})
+    require(eligibility.get("included") == len(bundle["collections.json"]["collections"]) and
+            eligibility.get("excludedEmpty", -1) >= 0 and
+            eligibility.get("examined") == eligibility.get("included", 0) + eligibility.get("excludedEmpty", 0),
+            "Collection eligibility counts disagree")
     require(bundle["ai-manifest.json"] == bundle["manifest.json"], "Manifest aliases disagree")
     article_urls = lambda f: {r["url"] for r in (bundle[f] if f == "blog.json" else bundle[f]["articles"])}
     require(article_urls("blog.json").isdisjoint(article_urls("dadapedia.json")), "Article partition overlap")
@@ -380,7 +417,7 @@ def validate(bundle):
               "dadapediaArticles": len(bundle["dadapedia.json"]["articles"]),
               "faqs": len(bundle["faq.json"]["faqs"])}
     require(bundle["health.json"]["counts"] == actual, "Coverage counts disagree")
-    for name in ("products", "collections", "articles", "faqs"):
+    for name in ("products", "articles", "faqs"):
         require(actual[name] > 0, "Empty core feed")
     ET.fromstring(bundle["ai-sitemap.xml"])
 

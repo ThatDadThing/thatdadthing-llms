@@ -33,6 +33,7 @@ class Fixture:
                 {"id": 1, "title": "Test shirt", "handle": "test-shirt", "body_html": "<p>Published copy</p>",
                  "published_at": "2026-10-01T00:00:00Z", "updated_at": "2026-10-02T00:00:00Z"}]}),
             P: document(P), C: document(C), A: article(A), B: article(B),
+            C + "/products.json?limit=250&page=1": json.dumps({"products": [{"id": 1}]}),
             C + ".json": json.dumps({"collection": {"id": 2, "title": "Test collection", "handle": "test",
                  "description": "", "products_count": 1, "published_at": "2026-10-01T00:00:00Z",
                  "updated_at": "2026-10-02T00:00:00Z"}}),
@@ -53,6 +54,50 @@ class Tests(unittest.TestCase):
         self.assertEqual(first["health.json"]["counts"],
             dict(products=1, collections=1, articles=2, garageArticles=1, dadapediaArticles=1, faqs=1))
         self.assertEqual(first["ai-manifest.json"], first["manifest.json"])
+
+    def test_empty_collection_is_held(self):
+        f = Fixture()
+        f.values[C + "/products.json?limit=250&page=1"] = '{"products":[]}'
+        bundle = d.build(f, ASOF)
+        self.assertEqual(bundle["collections.json"]["collections"], [])
+        self.assertEqual(bundle["health.json"]["collectionEligibility"],
+                         {"examined": 1, "included": 0, "excludedEmpty": 1})
+
+    def test_admin_total_without_public_members_cannot_qualify(self):
+        f = Fixture()
+        data = json.loads(f.values[C + ".json"])
+        data["collection"]["products_count"] = 100
+        f.values[C + ".json"] = json.dumps(data)
+        f.values[C + "/products.json?limit=250&page=1"] = '{"products":[]}'
+        self.assertEqual(d.build(f, ASOF)["collections.json"]["collections"], [])
+
+    def test_collection_count_uses_public_membership(self):
+        f = Fixture()
+        data = json.loads(f.values[C + ".json"])
+        data["collection"]["products_count"] = 100
+        f.values[C + ".json"] = json.dumps(data)
+        row = d.build(f, ASOF)["collections.json"]["collections"][0]
+        self.assertEqual(row["productCount"], 1)
+        self.assertEqual(row["productIds"], ["1"])
+
+    def test_unpublished_collection_member_fails_closed(self):
+        f = Fixture()
+        f.values[C + "/products.json?limit=250&page=1"] = '{"products":[{"id":999}]}'
+        with self.assertRaisesRegex(d.Failure, "missing from public catalog"):
+            d.build(f, ASOF)
+
+    def test_empty_collection_cannot_be_injected_after_generation(self):
+        bundle = d.build(Fixture(), ASOF)
+        row = bundle["collections.json"]["collections"][0]
+        row["productIds"], row["productCount"] = [], 0
+        with self.assertRaisesRegex(d.Failure, "Empty collection"):
+            d.validate(bundle)
+
+    def test_collection_count_must_match_member_ids(self):
+        bundle = d.build(Fixture(), ASOF)
+        bundle["collections.json"]["collections"][0]["productCount"] = 999
+        with self.assertRaisesRegex(d.Failure, "count disagrees"):
+            d.validate(bundle)
 
     def test_unlisted_product_cannot_enter_feed(self):
         f = Fixture()

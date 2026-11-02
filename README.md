@@ -25,7 +25,7 @@ An offline rebuild uses captured inputs; source capture times remain distinct fr
 ## Sources and outputs
 
 - Shopify product sitemap reconciled exactly with the paginated public product catalog.
-- Collection sitemap plus public collection JSON and canonical page checks.
+- Collection sitemap, canonical checks and paginated public product membership; empty/draft-only collections are held.
 - Article sitemap plus page Article/BlogPosting JSON-LD, canonical URLs and public descriptions.
 - Public FAQ details/summary blocks; public homepage brand description; FAQ tone answer.
 - Existing public training preference is preserved. No robots, privacy or channel settings change.
