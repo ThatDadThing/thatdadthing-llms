@@ -41,3 +41,27 @@ buying information. This feed does not represent a Merchant Center submission or
 ## Collection publication gate - November 2, 2026
 
 Include a collection only when its paginated public membership has at least one product in the verified public catalog. Draft-only or empty collections are held. productCount equals the number of unique productIds, all of which must exist in products.json. Administrative totals are not publication evidence. health.json records examined/included/excludedEmpty counts without advertising held collection identities. A fully empty eligible collection set is valid and publishes no collection records. Existing Shopify collection publication settings are not changed.
+
+
+## Approved product enrichment - November 2, 2026
+
+products.json uses schemaVersion 2. Product description is the complete Commander-approved
+Notion SEO Description, mechanically normalized with copy_text; it is never cut to 123 characters.
+data/approved-products.json is the allowlisted approved editorial snapshot. It contains only
+id, public URL, meta description, tones, audiences and recommendationContext (recommendedFor,
+interests). Notion remains the editing/review surface; an approved batch is imported to Git.
+There is no credential-backed automatic Notion sync. Unapproved edits do not publish themselves.
+The snapshot is not included in the Pages artifact. Its SHA-256 is recorded in health.json.
+
+Every refresh starts with live public Shopify products. Editorial records cannot introduce
+unpublished products; a matching ID with a changed URL blocks deployment for review. New
+public products without approved enrichment use their live meta description and have no
+invented audience or recommendation attributes. Removed products drop out on the next build.
+
+Tags, images/alt text and Color/Size options come from the fresh public product catalog.
+Options describe listed choices, not stock or guaranteed combinations. Product collections are
+computed from the same eligible, nonempty public collections in collections.json, with their
+current names and public URLs. Empty and unpublished collections remain excluded.
+Nested labels use the same mechanical copy normalization; collection names retain Unicode.
+Published/modified dates remain Shopify's dates, not dates invented for editorial approval.
+health.json productEditorial records approvedMatched and approved snapshot sha256 separately.

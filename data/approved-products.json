@@ -1,0 +1,750 @@
+{
+  "schemaVersion": 1,
+  "approvedOn": "2026-11-02",
+  "source": "Commander-approved Notion Product.json Code; description uses Notion SEO Description",
+  "products": [
+    {
+      "id": "8617222635712",
+      "url": "https://www.thatdadthing.com/products/periodic-sarcasm-t-shirt-1",
+      "description": "Periodic Sarcasm is for the dad whose straight-faced answers always get a reaction. A funny science dad shirt with a periodic table pun the family knows well.",
+      "tones": [
+        "Sarcastic"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Sarcastic dads and science-humor fans",
+        "interests": [
+          "chemistry",
+          "periodic-table wordplay",
+          "sarcasm"
+        ]
+      }
+    },
+    {
+      "id": "8599662788800",
+      "url": "https://www.thatdadthing.com/products/funny-dad-names-t-shirt",
+      "description": "Funny Dad Names shirt for the man who answers to Dad, Chief, Hey You, and a few unprintable options. A gift for the guy everyone calls when something breaks.",
+      "tones": [
+        "Family Folklore"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads with a household full of nicknames",
+        "interests": [
+          "dad nicknames",
+          "family humor"
+        ]
+      }
+    },
+    {
+      "id": "8740797513920",
+      "url": "https://www.thatdadthing.com/products/my-worst-enema-t-shirt-1",
+      "description": "My Worst Enema autocorrect dad joke shirt for the man whose texts become family folklore. Dad blames his phone. The group chat is already saving screenshots.",
+      "tones": [
+        "Word Pun"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads whose text messages are regularly defeated by autocorrect",
+        "interests": [
+          "autocorrect",
+          "texting",
+          "bathroom wordplay"
+        ]
+      }
+    },
+    {
+      "id": "8591901458624",
+      "url": "https://www.thatdadthing.com/products/retirement-jokes-t-shirt",
+      "description": "Retirement Jokes is for Dad, whose calendar is clear and punchlines are fully booked. A funny retirement gift for the man with all day to tell that one again.",
+      "tones": [
+        "Word Pun"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Retired dads who enjoy retirement puns",
+        "interests": [
+          "retirement",
+          "work jokes"
+        ]
+      }
+    },
+    {
+      "id": "8593920262336",
+      "url": "https://www.thatdadthing.com/products/bad-decisions-t-shirt-1",
+      "description": "Dad built the picnic table himself. Getting it out of the garage is the next job. Bad Decisions shirt for the man whose quick projects become family stories.",
+      "tones": [
+        "Dry Snark"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who laugh at their own questionable DIY decisions",
+        "interests": [
+          "DIY projects",
+          "self-deprecating humor"
+        ]
+      }
+    },
+    {
+      "id": "8617245638848",
+      "url": "https://www.thatdadthing.com/products/lawn-enforcement-t-shirt",
+      "description": "Lawn Enforcement T-Shirt for the dad inspecting his stripes while the family waits in the car. A funny lawn care gift for the man who puts crabgrass on notice.",
+      "tones": [
+        "Dad Pride"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads devoted to lawn care and crabgrass patrol",
+        "interests": [
+          "lawn care",
+          "mowing",
+          "yard work"
+        ]
+      }
+    },
+    {
+      "id": "8594880889024",
+      "url": "https://www.thatdadthing.com/products/king-for-the-day-t-shirt",
+      "description": "King For The Day gives Dad the royal treatment, until midnight. A funny birthday or Father's Day gift for the man whose reign usually ends in a well-earned nap.",
+      "tones": [
+        "Dad Pride"
+      ],
+      "audiences": [],
+      "recommendationContext": {
+        "recommendedFor": "Dads celebrating a birthday or Father's Day",
+        "interests": [
+          "birthdays",
+          "Father's Day",
+          "royal treatment"
+        ]
+      }
+    },
+    {
+      "id": "8594697879744",
+      "url": "https://www.thatdadthing.com/products/creatively-incorrect-t-shirt",
+      "description": "Dad has a diagram explaining why his shelf leans. The Creatively Incorrect shirt is a funny DIY dad gift for the man whose confidence never needs a level.",
+      "tones": [
+        "Dad Logic"
+      ],
+      "audiences": [],
+      "recommendationContext": {
+        "recommendedFor": "Dads who can explain away a crooked DIY project",
+        "interests": [
+          "DIY projects",
+          "creative excuses"
+        ]
+      }
+    },
+    {
+      "id": "8732688220352",
+      "url": "https://www.thatdadthing.com/products/no-directions-t-shirt",
+      "description": "No Directions celebrates Dad's road trip confidence and shortcuts nobody requested. A funny dad shirt for the man waiting for the Earth to deliver him on time.",
+      "tones": [
+        "Dad Logic"
+      ],
+      "audiences": [
+        "Dads",
+        "Gift Buyers",
+        "Wives",
+        "Daughters",
+        "Moms"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who navigate family road trips with confidence instead of directions",
+        "interests": [
+          "road trips",
+          "navigation",
+          "family vacations"
+        ]
+      }
+    },
+    {
+      "id": "8596876099776",
+      "url": "https://www.thatdadthing.com/products/whos-your-sister-t-shirt",
+      "description": "Worcestershire sauce gives Dad another excuse for a dinner table pun. A funny dad joke shirt for the man saying WhosYourSisterSauce before he passes the bottle.",
+      "tones": [
+        "Word Pun"
+      ],
+      "audiences": [],
+      "recommendationContext": {
+        "recommendedFor": "Dads who turn dinner-table pronunciation into a running joke",
+        "interests": [
+          "food puns",
+          "Worcestershire sauce",
+          "kitchen humor"
+        ]
+      }
+    },
+    {
+      "id": "8594277630144",
+      "url": "https://www.thatdadthing.com/products/uncanny-resemblance-t-shirt",
+      "description": "Dad laughs at the family impressions, then corrects their delivery. I Resemble That Remark is a funny dad shirt for the man who knows his own material.",
+      "tones": [
+        "Dad Pride"
+      ],
+      "audiences": [],
+      "recommendationContext": {
+        "recommendedFor": "Dads who recognize themselves in family impressions",
+        "interests": [
+          "family quirks",
+          "self-aware dad humor"
+        ]
+      }
+    },
+    {
+      "id": "8610181873856",
+      "url": "https://www.thatdadthing.com/products/the-original-source-t-shirt",
+      "description": "The Original Source celebrates Dad-A-Base advice, extra stories, and a quick look under the hood. A funny dad shirt for the man whose answers come with care.",
+      "tones": [
+        "Dad Logic"
+      ],
+      "audiences": [
+        "Dads",
+        "Gift Buyers",
+        "Wives",
+        "Daughters"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads whose advice comes with a long story",
+        "interests": [
+          "dad wisdom",
+          "database wordplay",
+          "unsolicited advice"
+        ]
+      }
+    },
+    {
+      "id": "8617233776832",
+      "url": "https://www.thatdadthing.com/products/i-smell-birthday-cake-t-shirt",
+      "description": "I Smell Birthday Cake is for Dad, who was full until the frosting arrived. A funny birthday dad shirt for the man volunteering to even up every slice of cake.",
+      "tones": [
+        "Deadpan Dad"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who always find room for birthday cake",
+        "interests": [
+          "birthdays",
+          "cake",
+          "dessert humor"
+        ]
+      }
+    },
+    {
+      "id": "8731564802240",
+      "url": "https://www.thatdadthing.com/products/original-wireless-t-shirt",
+      "description": "Original Wireless is a funny vinyl dad shirt for the man who spots a 45 RPM adapter and starts a listening party. One quick question, an afternoon of music.",
+      "tones": [
+        "Relatable"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads and music lovers who remember vinyl records and 45 RPM adapters",
+        "interests": [
+          "vinyl records",
+          "music nostalgia",
+          "45 RPM adapters"
+        ]
+      }
+    },
+    {
+      "id": "8734396612800",
+      "url": "https://www.thatdadthing.com/products/horrible-idea-t-shirt",
+      "description": "Horrible Idea dad shirt for the man who knows better and still asks what time. A funny gift for Dad, already warming up for the race he said nobody should run.",
+      "tones": [
+        "Relatable Chaos",
+        "Deadpan Dad",
+        "Dad Logic"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who recognize a bad idea and join in anyway",
+        "interests": [
+          "family games",
+          "questionable ideas",
+          "dad logic"
+        ]
+      }
+    },
+    {
+      "id": "8735218565312",
+      "url": "https://www.thatdadthing.com/products/disappointing-t-shirt",
+      "description": "Head & Shoulders but no Knees & Toes body wash? Dad has questions. A funny dad joke shirt for the man who turns the shampoo aisle into his own comedy routine.",
+      "tones": [
+        "Literal Humor"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who enjoy literal jokes and familiar song references",
+        "interests": [
+          "literal humor",
+          "body-wash wordplay",
+          "knees and toes"
+        ]
+      }
+    },
+    {
+      "id": "8751362965696",
+      "url": "https://www.thatdadthing.com/products/kept-the-receipt-t-shirt",
+      "description": "Been there, done that, kept the receipt. A funny dad saying shirt for the man whose stories come with dates, prices, and a drawer full of supporting evidence.",
+      "tones": [
+        "Dry Snark"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who save receipts and have a story to back every claim",
+        "interests": [
+          "dad sayings",
+          "receipts",
+          "life experience"
+        ]
+      }
+    },
+    {
+      "id": "10240404783296",
+      "url": "https://www.thatdadthing.com/products/lawn-stripes-t-shirt",
+      "description": "Lawn Stripes is for the dad who finishes mowing, then spends all afternoon admiring his work. A funny lawn dad shirt for the family's biggest fresh-cut fan.",
+      "tones": [
+        "Dad Pride"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who admire and photograph their freshly mown lawn stripes",
+        "interests": [
+          "lawn stripes",
+          "mowing",
+          "yard pride"
+        ]
+      }
+    },
+    {
+      "id": "10257048240320",
+      "url": "https://www.thatdadthing.com/products/tunnel-champion-t-shirt",
+      "description": "Every family road trip has a Tunnel Champion. Dad holds his breath, makes the rules, and stays undefeated in a competition nobody else remembers entering.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads with a long-running family tunnel breath-holding joke",
+        "interests": [
+          "road-trip traditions",
+          "tunnels",
+          "dad bragging rights"
+        ]
+      }
+    },
+    {
+      "id": "10250839392448",
+      "url": "https://www.thatdadthing.com/products/stay-in-your-lane-t-shirt",
+      "description": "Dad handles unsolicited advice with a grin, a polite Bud, and a firm grip on the tongs. Stay In Your Lane shirt for the family's favorite backyard authority.",
+      "tones": [
+        "Dry Snark"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who run the grill and have enough volunteer advice already",
+        "interests": [
+          "grilling",
+          "dad sayings",
+          "unsolicited advice"
+        ]
+      }
+    },
+    {
+      "id": "10251027185856",
+      "url": "https://www.thatdadthing.com/products/dad-at-football-t-shirt",
+      "description": "Dad brought a football and a full backyard playbook. This funny football dad shirt is for the family MVP whose postgame analysis carries on through dinner.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Football dads who bring tactics and huddles to backyard games",
+        "interests": [
+          "football",
+          "backyard games",
+          "sports dads"
+        ]
+      }
+    },
+    {
+      "id": "10251026825408",
+      "url": "https://www.thatdadthing.com/products/dad-at-soccer-t-shirt",
+      "description": "A funny soccer dad shirt for the backyard legend who narrates his own goals. Dad at Soccer celebrates the man whose one more shot always goes to extra time.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Soccer dads who turn backyard play into a stadium performance",
+        "interests": [
+          "soccer",
+          "backyard games",
+          "sports dads"
+        ]
+      }
+    },
+    {
+      "id": "10251027644608",
+      "url": "https://www.thatdadthing.com/products/dad-at-baseball-t-shirt",
+      "description": "Dad at Baseball is for the backyard slugger who calls his shot and writes the rules after it lands. A funny baseball dad shirt with big-league confidence.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Baseball dads who call their shots in family backyard games",
+        "interests": [
+          "baseball",
+          "backyard games",
+          "sports dads"
+        ]
+      }
+    },
+    {
+      "id": "10253133807808",
+      "url": "https://www.thatdadthing.com/products/relocation-consultant-t-shirt",
+      "description": "Strategic Relocation Consultant gives Dad a title worthy of every airport run and extra stop. A funny rideshare driver shirt for the family's route expert.",
+      "tones": [
+        "Deadpan Dad"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who treat family rides and pickups as a professional operation",
+        "interests": [
+          "family chauffeur",
+          "rideshare",
+          "job-title humor"
+        ]
+      }
+    },
+    {
+      "id": "10260451786944",
+      "url": "https://www.thatdadthing.com/products/paper-view-dad-joke-t-shirt",
+      "description": "Paper View is Dad's favorite origami joke, delivered with a straight face and repeated at dinner. A funny dad joke shirt for the man who lives for the groans.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who enjoy origami and pay-per-view wordplay",
+        "interests": [
+          "origami",
+          "paper folding",
+          "television wordplay"
+        ]
+      }
+    },
+    {
+      "id": "10263906517184",
+      "url": "https://www.thatdadthing.com/products/its-not-a-bug-its-a-dad-feature-t-shirt",
+      "description": "It's Not a Bug. It's a Feature. A funny tech dad shirt for the household fixer whose repairs come with special instructions and a firm belief in user error.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Tech dads and programmers who call their workarounds special features",
+        "interests": [
+          "technology",
+          "programming",
+          "DIY tech support"
+        ]
+      }
+    },
+    {
+      "id": "10268760899776",
+      "url": "https://www.thatdadthing.com/products/because-dad-said-so-t-shirt",
+      "description": "Because Dad Said So T-Shirt: for the dad whose four-word ruling ends every family debate. A funny gift for Dad, because the appeal has already been denied.",
+      "tones": [
+        "Dad Logic"
+      ],
+      "audiences": [
+        "Dads",
+        "Gift Buyers",
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads whose final answer is because I said so",
+        "interests": [
+          "dad logic",
+          "family negotiations",
+          "dad sayings"
+        ]
+      }
+    },
+    {
+      "id": "10269704618176",
+      "url": "https://www.thatdadthing.com/products/deter-gents-t-shirt",
+      "description": "Meet the Deter Gents T-Shirt, a laundry pun for Dad and his perfectly timed groans. A funny gift for the man who can turn any chore into a family eye-roll.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who find laundry puns in the detergent aisle",
+        "interests": [
+          "laundry",
+          "detergent wordplay",
+          "dad jokes"
+        ]
+      }
+    },
+    {
+      "id": "10277845434560",
+      "url": "https://www.thatdadthing.com/products/seen-my-glasses-funny-dad-memory-joke-t-shirt",
+      "description": "Dad remembers everything - except where he put his glasses. A funny, relatable memory joke T-shirt for dads. Great for Father's Day, birthdays and Christmas.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Dads",
+        "Wives",
+        "Daughters",
+        "Gift Buyers"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads known for selective memory and misplacing their glasses",
+        "interests": [
+          "missing glasses",
+          "selective memory",
+          "family humor"
+        ]
+      }
+    },
+    {
+      "id": "10271411011776",
+      "url": "https://www.thatdadthing.com/products/household-dish-collector-dad-t-shirt",
+      "description": "Dad retired from bussing tables years ago. His family never got the memo. The Household Dish Collector T-Shirt celebrates Dad's never-ending dish duty.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who collect the household's missing dishes",
+        "interests": [
+          "household chores",
+          "dish collecting",
+          "family humor"
+        ]
+      }
+    },
+    {
+      "id": "10280212037824",
+      "url": "https://www.thatdadthing.com/products/im-not-a-quitter-coffee-t-shirt",
+      "description": "For the dad who fixes everything after his first cup. I'm Not A Quitter brings coffee humor to his daily ritual. Quitting isn't on the menu, but refills are.",
+      "tones": [
+        "Dad Pride"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Coffee-loving dads who have no interest in decaf",
+        "interests": [
+          "coffee",
+          "decaf jokes",
+          "morning routines"
+        ]
+      }
+    },
+    {
+      "id": "10279350829248",
+      "url": "https://www.thatdadthing.com/products/632-christmas-movies-t-shirt",
+      "description": "Dad knows the plot before the cocoa is poured. The 632 Christmas Movies T-Shirt is a funny Christmas gift for the man who calls every ending and watches anyway.",
+      "tones": [
+        "Dry Snark"
+      ],
+      "audiences": [
+        "Dads",
+        "Gift Buyers"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who predict every Christmas movie plot",
+        "interests": [
+          "Christmas movies",
+          "holiday sarcasm",
+          "family movie nights"
+        ]
+      }
+    },
+    {
+      "id": "10275289792704",
+      "url": "https://www.thatdadthing.com/products/did-i-say-that-out-loud-t-shirt",
+      "description": "Sorry. Did I just say that out loud? A funny dad shirt for the man whose inside voice keeps joining family dinner. Find his next gift at That Dad Thing.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Outspoken dads whose helpful opinions escape out loud",
+        "interests": [
+          "running commentary",
+          "sarcasm",
+          "dad sayings"
+        ]
+      }
+    },
+    {
+      "id": "10283797217472",
+      "url": "https://www.thatdadthing.com/products/one-night-stand-t-shirt",
+      "description": "Dad's kind of one night stand comes with a lamp, a book and room for his glasses. A funny dad T-shirt for the man whose best material is right beside the bed.",
+      "tones": [
+        "Word Pun"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who turn a bedside table into a one-night-stand pun",
+        "interests": [
+          "furniture wordplay",
+          "bedside tables",
+          "dad puns"
+        ]
+      }
+    },
+    {
+      "id": "10282048520384",
+      "url": "https://www.thatdadthing.com/products/a-roll-of-toilet-paper-t-shirt",
+      "description": "Life moves faster near the end of the roll. This funny toilet paper T-shirt gives Dad's aging wisdom a vintage look and a punchline worth passing around.",
+      "tones": [
+        "Deadpan Dad"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads and grandpas who joke about birthdays and time passing faster",
+        "interests": [
+          "aging",
+          "birthdays",
+          "toilet-paper humor"
+        ]
+      }
+    },
+    {
+      "id": "10286767440064",
+      "url": "https://www.thatdadthing.com/products/the-shortcut-t-shirt",
+      "description": "The Shortcut T-Shirt celebrates Dad's scenic-route confidence. A funny road trip gift for the man who knows faster and better are not always the same thing.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads whose family shortcuts include scenery and pie",
+        "interests": [
+          "road trips",
+          "scenic routes",
+          "family vacations"
+        ]
+      }
+    },
+    {
+      "id": "10290923667648",
+      "url": "https://www.thatdadthing.com/products/livin-the-dream-t-shirt",
+      "description": "Dad's answer to every \"How's it going?\" is \"Livin' the dream, baby.\" A funny dad T-shirt for the man who says it with a grin, a sigh, or a little of both.",
+      "tones": [
+        "Deadpan Dad"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads whose stock answer is livin the dream",
+        "interests": [
+          "dad sayings",
+          "everyday sarcasm",
+          "family life"
+        ]
+      }
+    },
+    {
+      "id": "10302087299264",
+      "url": "https://www.thatdadthing.com/products/dad-at-golf-t-shirt",
+      "description": "Dad at Golf celebrates the family golfer whose best shot gets better every time he tells it. A funny golf dad gift with confidence well above par, every round.",
+      "tones": [
+        "Relatable Chaos"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Golf dads who bring home the story of one good shot",
+        "interests": [
+          "golf",
+          "sports dads",
+          "golf-course humor"
+        ]
+      }
+    },
+    {
+      "id": "10298684932288",
+      "url": "https://www.thatdadthing.com/products/maybe-ill-just-crinkle-it-t-shirt",
+      "description": "For the dad who's not quite crushing it today, the Maybe I'll Just Crinkle It T-Shirt delivers dry humor and a more achievable plan of attack.",
+      "tones": [
+        "Deadpan Dad"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "Dads who prefer realistic progress to motivational pressure",
+        "interests": [
+          "everyday effort",
+          "deadpan humor",
+          "realistic motivation"
+        ]
+      }
+    }
+  ]
+}

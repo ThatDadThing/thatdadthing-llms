@@ -10,6 +10,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
+      - 'data/**'
       - '.github/workflows/publish.yml'
   schedule:
     - cron: '17 */2 * * *'
