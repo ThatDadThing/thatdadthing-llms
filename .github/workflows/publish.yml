@@ -1,0 +1,86 @@
+name: Refresh and publish discovery feeds
+on:
+  workflow_dispatch:
+    inputs:
+      bootstrap:
+        description: 'Allow the initial deployment when health.json does not exist'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/publish.yml'
+  schedule:
+    - cron: '17 */2 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: discovery-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main' && vars.DISCOVERY_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/discovery.py --output build/site --cache build/public-cache
+      - name: Compare with last deployed source counts
+        env:
+          BOOTSTRAP: ${{ github.event_name == 'workflow_dispatch' && inputs.bootstrap || false }}
+        run: |
+          if [ "$BOOTSTRAP" = "true" ]; then
+            python scripts/check_health.py --baseline build/site --bootstrap
+          else
+            python scripts/check_health.py --baseline build/site
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: discovery-rollback-${{ github.run_id }}
+          path: build/site
+          retention-days: 30
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: build/site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: discovery-rollback-${{ github.run_id }}
+          path: build/site
+      - name: Verify deployed bytes with bounded propagation retries
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if python scripts/check_health.py --expected build/site; then exit 0; fi
+            sleep 15
+          done
+          exit 1

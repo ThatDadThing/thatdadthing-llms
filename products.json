@@ -1,17 +1,357 @@
 {
+  "schemaVersion": 1,
+  "source": "https://www.thatdadthing.com",
   "products": [
     {
+      "id": "10279350829248",
+      "name": "632 Christmas Movies T-Shirt",
+      "url": "https://www.thatdadthing.com/products/632-christmas-movies-t-shirt",
+      "description": "Dad knows they're falling in love before either of them does. Dad Has Already Seen This Christmas Movie She has a big-city job. He owns something charming. Somebody has to save the Christmas festival. Dad has solved the entire situation before the first mug of cocoa hits the table. The family insists this one is different. Dad points out the same four settings, the familiar faces and the suspiciously convenient snowfall. He stays for the ending anyway. Somebody has to confirm he was right. Dad Approved because 632 movies is a lot of evidence for one plot.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-22T12:48:20-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10282048520384",
+      "name": "A Roll Of Toilet Paper T-Shirt",
+      "url": "https://www.thatdadthing.com/products/a-roll-of-toilet-paper-t-shirt",
+      "description": "Dad used to say, \"Wait until you're my age.\" Now he's explaining the passage of time with a roll of toilet paper. A Funny Toilet Paper T-Shirt for Dad's Theory of Time Every birthday seems to arrive a little quicker, and Dad finally has a diagram. With an old-school roll illustration and the words \"Life is like a roll of toilet paper. The closer you get to the end, the faster it goes,\" this shirt turns his favorite observation into a family classic. Dad Approved because he's been on a roll for years.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-26T07:26:27-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8593920262336",
+      "name": "Bad Decisions T-Shirt",
+      "url": "https://www.thatdadthing.com/products/bad-decisions-t-shirt-1",
+      "description": "Dad said he could build it himself. That was before lunch. Bad Decisions: Dad Has Quite a Track Record The picnic table looked simple enough. A few boards. Some screws. An afternoon in the garage. Dad waved off the instructions and announced that he had a better way. Now it's dinner, the table is finished, and the table will not fit through the garage door. The family gathers. Suggestions are offered. Someone mentions measuring first. Dad studies his work with the calm expression of a man who has already decided this will be a very funny story eventually. \"I'm Pretty Good at Making Bad Decisions.\" You have to respect a man who knows his strengths. Especially when he has built somewhere for everyone to sit and discuss them. Dinner in the garage, anyone? Dad Approved because the plan fell apart, but the table is surprisingly solid.",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-03T11:52:10-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10268760899776",
+      "name": "Because Dad Said So T-Shirt",
+      "url": "https://www.thatdadthing.com/products/because-dad-said-so-t-shirt",
+      "description": "Dad has heard the argument, considered the evidence, and reached the same conclusion he had before anyone started talking. Because I Said So: Dad's Final Answer Bedtime negotiations. Thermostat appeals. One more stop on the way home. Every family has a man who can settle all three with four words and a look over his glasses. He calls it experience. The kids call it unfair. Mom calls it his turn to explain. Dad calls the meeting adjourned. Dad Approved because the appeal was denied before it was filed.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-14T07:00:06-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8594697879744",
+      "name": "Creatively Incorrect T-Shirt",
+      "url": "https://www.thatdadthing.com/products/creatively-incorrect-t-shirt",
+      "description": "Dad can explain the shelf. You may want to sit down. Creatively Incorrect: Dad Always Has an Explanation It leans. Everybody can see that it leans. The little bubble in the level has made its position perfectly clear. Dad would still like a chance to explain. The wall is old. The floor settles. The house has character. He draws a diagram on the back of an envelope, then turns the envelope slightly until everything lines up. \"It's not wrong. It's creatively incorrect.\" A book slides toward the end. Dad catches it, adds a bookend, and gives the shelf a satisfied little pat. There. An improvement nobody had even thought to ask for. The family photo now stands at an interesting angle. Somehow, everyone in it looks as though they're listening to his explanation too. Dad Approved because the shelf may lean, but his argument has excellent support.",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-06T05:07:47-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10251027644608",
+      "name": "Dad at Baseball T-Shirt",
+      "url": "https://www.thatdadthing.com/products/dad-at-baseball-t-shirt",
+      "description": "Dad called his shot. The neighbors have been notified. Dad at Baseball: Big Swing. Backyard Rules. All Dad asked for was a nice, easy pitch. He's waved off three so far. One was too high. One was too low. The last one interrupted his stance. He adjusts his grip, points toward the back fence and checks that everyone saw him point. The bases are a towel, a flowerpot and something from the garage. The crowd consists of family members who were promised a quick game. Then he connects. The ball disappears into the shrubs. Dad starts his victory lap while everyone else negotiates whether that counts as a home run. He remembers a backyard rule that settles it. Funny how that rule always shows up right after his at-bat. DAD AT PLAY. Please allow extra time for the replay. Dad Approved because the bases are makeshift and the confidence is regulation.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-20T07:01:05-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10251027185856",
+      "name": "Dad at Football T-Shirt",
+      "url": "https://www.thatdadthing.com/products/dad-at-football-t-shirt",
+      "description": "Dad brought a football. The backyard now has a depth chart. Dad at Football: Home-Field Confidence Before anyone can ask who's playing, Dad has formed a huddle. He's drawing a route on his palm, assigning positions and explaining why the lawn chair is technically the corner of the end zone. Someone suggests we just throw the ball around. Dad agrees. Right after this play. He sends one kid long, tells another to act casual and delivers the kind of pump fake normally reserved for a televised audience. The catch is made. The celebration begins. Dad would like everyone to remember who drew that up. Ten minutes later, he's still explaining what the defense never saw coming. The defense is eating a popsicle. DAD AT PLAY. Everybody take a knee. He has one more thing. Dad Approved because \"go long\" also applies to the postgame story.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-12T07:00:03-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10302087299264",
+      "name": "Dad At Golf T-Shirt",
+      "url": "https://www.thatdadthing.com/products/dad-at-golf-t-shirt",
+      "description": "Dad said he'd be home after nine holes. He did not specify which nine. Dad at Golf: One Good Shot Changes Everything He studies the breeze, switches clubs and takes two practice swings. The drive heads toward the trees. \"Opens up over there,\" Dad says. Two holes later, he lands one right where he meant to. The shoulders settle. The walk changes. Now everyone gets the story of what he adjusted. By the eighteenth, he's explaining how different the round would have been without those three holes, that bounce and the putt that definitely broke uphill. DAD AT PLAY. The scorecard is in his pocket. The good shot is coming home with him. Dad Approved because one good shot is enough evidence to book another round.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-30T07:00:03-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10251026825408",
+      "name": "Dad At Soccer T-Shirt",
+      "url": "https://www.thatdadthing.com/products/dad-at-soccer-t-shirt",
+      "description": "Dad said it was a friendly game, then started narrating his own highlights. Dad at Soccer: The Backyard Comes With Commentary They asked him to kick the ball back. That was his opening. Now he's dribbling around a flowerpot, calling his own name in an announcer's voice and pretending the gap between two shoes is a packed stadium. He scores. Arms spread. Slow jog along the fence. A salute to the imaginary crowd. The actual crowd would like the ball back. Dad promises one more shot, which somehow includes a demonstration of where the goalkeeper went wrong. The goalkeeper had already gone inside for a drink. DAD AT PLAY has entered extra time. Dinner is ready, the light is fading, and he's found the one thing that can keep the match going. He still has the ball. Dad Approved because \"one more shot\" has never meant one.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-05T07:01:00-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10269704618176",
+      "name": "Deter Gents T-Shirt",
+      "url": "https://www.thatdadthing.com/products/deter-gents-t-shirt",
+      "description": "Dad can hear a pun forming from three rooms away. Somehow, the laundry aisle gave him enough material for the entire drive home. A Laundry Pun T-Shirt for Dad's Next Eye-Roll He read the detergent label, paused for effect, and announced that it was getting harder to deter gents. The family groaned. Dad took that as a standing ovation. Dad Approved because a clean load deserves a dirty look.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-15T07:00:06-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10275289792704",
+      "name": "Out Loud? T-Shirt",
+      "url": "https://www.thatdadthing.com/products/did-i-say-that-out-loud-t-shirt",
+      "description": "Dad was going to keep that thought to himself. Then everyone at the table looked up. A Funny Dad T-Shirt for the Man Who Thinks Out Loud He has a running commentary on the thermostat, the parking situation and whatever just happened on TV. Every so often, a thought skips the quiet part and arrives fully announced. Then comes the innocent look: \"Sorry. Did I just say that out loud?\" The family knows the answer. They're mostly impressed he waited this long. Dad Approved because an opinion this helpful was bound to escape.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-19T07:01:31-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8735218565312",
+      "name": "Disappointing T-Shirt",
+      "url": "https://www.thatdadthing.com/products/disappointing-t-shirt",
+      "description": "Dad was sent for shampoo. He has discovered a much larger problem. Head & Shoulders, Knees & Toes: A Dad Joke in the Soap Aisle He stands in front of the shelf, reading labels with the concentration of a man comparing lawn mowers. There's Head & Shoulders. Plenty of it. But where, exactly, is the Knees & Toes body wash? Disappointing. He looks at you. He waits. You keep pushing the cart, which he takes as a sign that you haven't fully appreciated the problem. By the next aisle, he's explaining the missed opportunity. By checkout, he has worked eyes, ears, mouth, and nose into the conversation. The cashier smiles. Big mistake. Dad now has independent confirmation that this is good material. The shampoo makes it home. So does the joke. Both should last the family several weeks. Dad Approved because a man should be able to finish the song and his shower.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-16T13:48:33-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8599662788800",
       "name": "Funny Dad Names T-Shirt",
-      "url": "https://thatdadthing.com/products/funny-dad-names-t-shirt",
-      "category": "Dad shirt",
-      "audience": [
-        "dads",
-        "gift buyers",
-        "families"
-      ],
-      "description": "A funny dad names shirt from That Dad Thing, built for dads and the families who know exactly which name fits."
+      "url": "https://www.thatdadthing.com/products/funny-dad-names-t-shirt",
+      "description": "Dad can tell what broke by the way you say his name. Funny Dad Names: He Knows When You Mean Him A long \"Daaaaad\" usually means something is out of reach. A sharp \"Dad!\" means he's already told that joke. His full name from the kitchen means he should probably put down the remote before answering. He has been called Chief, Old Man, Hey You, and a few things that didn't make it into the birthday card. Somehow, every one of them finds the right man. \"I answer to almost anything. Some of it, I can't repeat.\" He says this while opening a jar for someone who was rolling their eyes at him thirty seconds ago. Then he finds the missing charger. Then he gets called again. Whatever the name, he still shows up. Dad Approved because around here, \"Hey, you\" usually means \"We need our favorite guy.\"",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-10T04:32:48-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8734396612800",
+      "name": "Horrible Idea T-Shirt",
+      "url": "https://www.thatdadthing.com/products/horrible-idea-t-shirt",
+      "description": "Dad has already explained why this will end badly. He's looking for his sneakers. Horrible Idea: Dad Would Like the Start Time The neighbors have proposed a dads-versus-kids relay race. Nobody has warmed up. The kids have been running around all afternoon. One of the dads says he was pretty fast in high school. Your dad shakes his head. He knows exactly where this is going. \"That's A HORRIBLE Idea! (What Time?)\" Twenty minutes later, he's at the starting line discussing strategy with three men who came over to borrow a folding chair. He has assigned an anchor leg. He has opinions about the handoff. He would like everyone to take this seriously. The kids win. Dad requests a rematch. Apparently the first race was just to establish what needs work. Dad Approved because he warned everybody, and he'd hate to miss being right in person.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-16T13:48:20-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10271411011776",
+      "name": "Dish Collector T-Shirt",
+      "url": "https://www.thatdadthing.com/products/household-dish-collector-dad-t-shirt",
+      "description": "Dad retired from his career as a busboy sometime in his teens. Unfortunately, his family never received the memo. Household Dish Collector: Dad's Daily Expedition Every morning, the cupboards are empty. The dishwasher is empty. Yet somehow, every plate, bowl, cup, and drinking glass in the house has disappeared. Dad knows where they are. On the nightstands. Under the beds. Behind the couch. On desks. In bedrooms belonging to people who apparently believe dishes return to the kitchen through some mysterious household migration process. And so begins Dad's daily expedition. Room by room. Surface by surface. Collecting evidence of meals long forgotten, muttering under his breath: \"These dishes don't make it to the dishwasher by themselves.\" A statement he has repeated approximately 47,000 times. With absolutely no measurable improvement. Dad may have retired from bussing tables decades ago. Dad Approved because his family has yet to accept his resignation. Meet the Household Dish Collector in Dad-a-Pedia",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-16T07:00:07-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8617233776832",
+      "name": "I Smell Birthday Cake T-Shirt",
+      "url": "https://www.thatdadthing.com/products/i-smell-birthday-cake-t-shirt",
+      "description": "Dad said he was too full for dessert. Then somebody opened the cake box. I Smell Birthday Cake: Dad's Birthday Party Instincts A minute ago, he was leaning back in his chair, explaining that he could not possibly eat another bite. Now he is in the kitchen, locating plates. Nobody called him. Nobody mentioned frosting. He just knew. \"Do I smell birthday cake?\" There it is. The announcement everyone expected from the man who somehow knew where the good forks were hiding. He asks for a sliver. Then he suggests starting at the corner with the extra icing. Then he notices the uneven edge and offers to straighten it up. Purely to help whoever cuts the next piece. By the time the candles are put away, Dad has conducted three rounds of cake maintenance. The birthday kid gets the wishes. Dad gets the structural repairs. Dad Approved because there is always room for a little quality control.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-25T08:51:55-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10280212037824",
+      "name": "I'm Not A Quitter T-Shirt",
+      "url": "https://www.thatdadthing.com/products/im-not-a-quitter-coffee-t-shirt",
+      "description": "Dad can fix a squeaky door, find everyone's missing shoes, and explain exactly how early he got up. Just let the coffee finish first. A Funny Coffee Shirt for the Dad Who Doesn't Do Decaf Offer him decaf and he'll look at you like you just suggested mowing the lawn with scissors. That first cup isn't a luxury; it's the opening ceremony for another day of being the guy everybody needs. Dad Approved because quitting is not on the menu, but refills are.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-23T07:00:03-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10263906517184",
+      "name": "Bug? Try Feature T-Shirt",
+      "url": "https://www.thatdadthing.com/products/its-not-a-bug-its-a-dad-feature-t-shirt",
+      "description": "Dad fixed the remote. There is now a short training session. Dad's Tech Support Comes With a Few Special Features First, hold it at a forty-five-degree angle. Press the corner of the battery cover. Give it a little tap, but not that little tap. The other one. Dad demonstrates with the patience of a man explaining something perfectly reasonable. Someone suggests new batteries. Someone else suggests a new remote. Dad looks genuinely surprised that anyone would abandon such an advanced system. \"It's Not a Bug. It's a Feature.\" He takes the remote back. Naturally, it works on the first try. This settles everything as far as he is concerned. Now the whole family knows the angle, the tap, and which seat gets the best results. Dad leans back in that very seat, pleased with another successful repair. Dad Approved because the only thing left to update is the family training manual.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-13T07:00:07-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8751362965696",
+      "name": "Kept The Receipt T-Shirt",
+      "url": "https://www.thatdadthing.com/products/kept-the-receipt-t-shirt",
+      "description": "Ask Dad how he knows, and he will disappear into the other room. Kept The Receipt: Dad Sayings With Supporting Evidence You were hoping for a quick answer. You are about to get a date, a price, and the name of the guy who sold it to him. \"BEEN THERE. DONE THAT. KEPT THE RECEIPT.\" Dad has lived through enough home repairs, car purchases, and supposedly once-in-a-lifetime deals to appreciate a little documentation. The drawer looks chaotic to everyone else. Dad reaches past three rubber bands and an instruction booklet for something you no longer own, then produces exactly the slip of paper he wanted. He holds it up like the last witness in a courtroom drama. Most of the ink has faded. His recollection of the conversation has not. He can still tell you why he went with the better model, and apparently we have time for that story too. Dad Approved because \"I told you so\" is even better with an itemized total.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-25T08:51:49-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8594880889024",
+      "name": "King For The Day T-Shirt",
+      "url": "https://www.thatdadthing.com/products/king-for-the-day-t-shirt",
+      "description": "Dad has requested breakfast and referred to himself as \"His Majesty\" twice. It is 8:15. King For The Day: Dad's Birthday and Father's Day Reign The family has granted him one day of royal treatment. He intends to get through the entire agenda. Favorite dinner. First choice of movie. The good chair without anyone asking him to move over. He waves graciously at the people who already live in his house and reminds them that the king would appreciate another cup of coffee. \"King For The Day\" does come with one condition: \"Expires at Midnight.\" Dad has read the terms and is considering whether dessert can be requested in advance. By nine, the royal feet are up. By nine-thirty, His Majesty is asleep halfway through the movie he insisted on choosing. Someone gently takes the remote. The kingdom carries on. Dad Approved because a great reign should end with cake and a nap.",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-06T05:09:08-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8617245638848",
+      "name": "Lawn Enforcement T-Shirt",
+      "url": "https://www.thatdadthing.com/products/lawn-enforcement-t-shirt",
+      "description": "Some dads mow the lawn. Others enforce it. Lawn Enforcement: Dad Is on Crabgrass Patrol Everyone's in the car. Dad's at the curb, admiring the lawn from an angle nobody else knew existed. They were supposed to leave ten minutes ago. But you don't rush the final inspection. He knows which neighbor cuts too low. He has strong opinions about edging. And that lone dandelion picked the wrong jurisdiction. \"Sir, step away from the crabgrass.\" For the dad whose idea of a relaxing Saturday involves straight lines and a full tank of mower gas. You know the one. You're probably still waiting in the car. Dad Approved because the yard does not police itself.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-25T08:52:11-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10240404783296",
+      "name": "Lawn Stripes T-Shirt",
+      "url": "https://www.thatdadthing.com/products/lawn-stripes-t-shirt",
+      "description": "Mower off. Admiration on. Dad and His Lawn Stripes: One More Look Dad finished mowing twenty minutes ago. You can tell because he's been standing in the same spot for twenty minutes. He takes a few steps left. Tilts his head. Walks upstairs to see how the stripes look from the bedroom window. They look good. They looked good from the driveway, too. Still, a second opinion is important, so he's asking everyone in the house to come outside. \"See how they catch the light?\" He says the yard could host a major league game. Somebody points out the birdbath. He takes a photo. Then another, without the hose in it. The family group chat receives an update nobody requested. By evening, he's worked \"just cut the lawn\" into three unrelated conversations. Dad Approved because those stripes are not going to admire themselves.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-30T07:00:03-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10290923667648",
+      "name": "Livin The Dream T-Shirt",
+      "url": "https://www.thatdadthing.com/products/livin-the-dream-t-shirt",
+      "description": "Ask Dad how he's doing and you'll get the same answer whether he's headed for vacation or headed back to the hardware store for the third time. Livin' The Dream, Baby - Dad's Standard Answer \"Livin' the dream, baby. Livin' the dream...\" He says it with a grin. Or a sigh. Sometimes both. Is he serious? Sarcastic? A little of each? Dad isn't telling. He's got places to be, things to fix, and approximately forty-seven reasons the thermostat should stay exactly where he left it. Tomorrow, when somebody asks again? Same answer. Same delivery. That's Dad. Dad Approved because somebody has to keep the dream running. Read the field guide: Livin' the Dream .",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-29T07:01:32-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10298684932288",
+      "name": "Maybe I'll Just Crinkle It T-Shirt",
+      "url": "https://www.thatdadthing.com/products/maybe-ill-just-crinkle-it-t-shirt",
+      "description": "Some days Dad is ready to crush it. Today, he has reviewed the situation and adjusted the objective. A Funny Dad Shirt for Doing What You Can The list is long, the coffee is getting cold, and somebody keeps asking what's next. Dad is still on the job; he is just applying a more reasonable amount of force. If the day ends with a respectable crinkle, he'll call that progress. Dad Approved because not every victory needs to be flattened.",
+      "category": "T-Shirt",
+      "datePublished": "2026-11-02T07:00:04-05:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8740797513920",
+      "name": "My Worst Enema T-Shirt",
+      "url": "https://www.thatdadthing.com/products/my-worst-enema-t-shirt-1",
+      "description": "Dad has sent a correction. It has made everything worse. My Worst Enema: Dad Versus Autocorrect He was trying to send one perfectly ordinary message to the family group chat. A time. A place. Perhaps a reminder to bring the cooler. His phone decided the conversation needed a different direction. Now the laughing faces are arriving faster than he can type. Dad puts on his reading glasses, holds the phone a little farther away, and prepares a firm complaint about modern technology. \"Autocorrect has become my worst enema.\" There is a brief pause in the chat. Then someone takes a screenshot. Dad insists everybody knows what he meant. They do. They also know what they'll be reading aloud at Thanksgiving. He finally puts the phone down and starts laughing with them. Dad Approved because his phone finally told a dad joke worth taking credit for.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-16T13:48:48-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8732688220352",
+      "name": "No Directions T-Shirt",
+      "url": "https://www.thatdadthing.com/products/no-directions-t-shirt",
+      "description": "Dad has passed the same gas station twice. He says it is a useful landmark. No Directions: The Dad Road Trip Runs on Confidence The navigation voice suggests a turn. Dad taps the steering wheel and announces that he knows another way. From the back seat comes the quiet rustle of someone opening the snacks an hour early. \"I do not need directions. The Earth rotates under me until I arrive.\" It is a bold theory. The family would settle for an exit number. Every bend brings fresh reassurance. This road used to connect. That building used to be a diner. The destination is definitely just over this next hill, unless they moved it. Eventually, he pulls into the right parking lot and looks around for recognition. Nobody mentions the extra forty minutes. Dad has already announced that his route had less traffic. Dad Approved because you cannot argue with a man who arrived exactly where he said he would. Eventually.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-16T13:48:11-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10283797217472",
+      "name": "One Night Stand T-Shirt",
+      "url": "https://www.thatdadthing.com/products/one-night-stand-t-shirt",
+      "description": "Dad's wild nights now involve a lamp, a good book and knowing exactly where he left his glasses. A Funny Dad T-Shirt for His Kind of Nightlife He's got a favorite mug, a book with a permanent bookmark and a bedside setup arranged with the confidence of a man who knows what he likes. Ask about his one night stand and he'll point proudly to the furniture. Dad Approved because some relationships are built on solid wood.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-28T07:00:02-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8731564802240",
+      "name": "Original Wireless T-Shirt",
+      "url": "https://www.thatdadthing.com/products/original-wireless-t-shirt",
+      "description": "Someone asked Dad what the little yellow thing was. He has cleared his afternoon. Original Wireless: Dad's Vinyl Records Have Stories He recognizes a 45 RPM adapter immediately. Everyone else recognizes the expression that means a short question is about to become a listening party. Out comes a record. Then another. He remembers where he bought each one, who borrowed it, and which song you have absolutely heard before, even if you insist you have not. A pair of wireless earbuds brings him back to his point. \"Original Wireless.\" He delivers the line, waits for the groan, and starts explaining the yellow adapter anyway. There is equipment to discuss. You came over to ask one question. Now you are standing beside the turntable while Dad says, \"Wait for this part.\" He mouths the guitar solo. Somehow, you stay for the whole side. Dad Approved because his favorite records have always come with live commentary.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-16T13:47:52-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10260451786944",
+      "name": "Paper View T-Shirt",
+      "url": "https://www.thatdadthing.com/products/paper-view-dad-joke-t-shirt",
+      "description": "Dad has been waiting his entire life for this moment. World Origami Championship: Dad's Kind of Paper View There are dads who watch football. Dads who watch golf. Dads who can spend an entire Sunday explaining why the referee is wrong. And then there's your dad. He's just announced that he's looking forward to watching the World Origami Championship. On Paper View. He delivers the punchline with a perfectly straight face. Then comes the pause. That little grin. The slow realization that nobody in the room is laughing. Except Dad. He's practically in tears. Mom rolls her eyes. The kids groan. Someone threatens to cancel his television privileges. Doesn't matter. Dad's already planning to tell it again at dinner. Because a joke this good deserves an encore. Dad Approved. Even if the entire family wishes he'd just fold it up and put it away.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-09T07:00:05-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8617222635712",
+      "name": "Periodic Sarcasm T-Shirt",
+      "url": "https://www.thatdadthing.com/products/periodic-sarcasm-t-shirt-1",
+      "description": "Dad can get a reaction without raising his voice. Dad's Chemistry: Sarcasm. May Occur Periodically. Dad is standing beside the open dishwasher, holding a plate. Someone asks if he's doing the dishes. \"No, I'm taking the plates for a walk.\" Perfectly level voice. Barely a pause. Then the corner of his mouth gives him away. The family has had years to study this reaction. Obvious question goes in. Completely unhelpful answer comes out. Dad waits for the eye roll as though he's collecting experimental data. Ask if he's being sarcastic and he'll say, \"Me? Never.\" Same face. Same grin. Highly repeatable results. He calls it periodic sarcasm. The family is still waiting to discover the period when it doesn't occur. Further testing will take place at dinner. Someone is bound to ask if the food is hot. Dad Approved because sarcasm is a second language and he happens to be fluent.",
+      "category": "T-Shirt",
+      "datePublished": "2026-09-28T07:00:05-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10253133807808",
+      "name": "Relocation Consultant T-Shirt",
+      "url": "https://www.thatdadthing.com/products/relocation-consultant-t-shirt",
+      "description": "Dad does not give rides. He executes strategic relocations. Strategic Relocation Consultant: Dad's Rideshare Job Title He texted \"outside\" three minutes ago. By the time everybody finds their shoes, he's checked the traffic, chosen a route and formed an opinion about the pickup spot. The airport run has a departure window. Practice pickup has a designated loading area. \"Can we stop somewhere first?\" requires a revised itinerary and a fairly dramatic look in the mirror. Dad will make the stop. Of course he will. He just wants it entered into the official record. He knows which lane moves, where the road backs up and exactly when someone will ask to change the music. Every passenger reaches the destination with a little extra knowledge about how they got there. Five stars, please. The route commentary was complimentary. Dad Approved because \"just dropping you off\" does not look nearly as impressive on a business card.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-07T07:00:01-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8591901458624",
+      "name": "Retirement Jokes T-Shirt",
+      "url": "https://www.thatdadthing.com/products/retirement-jokes-t-shirt",
+      "description": "Dad retired on Friday. His jokes reported for duty Monday morning. Retirement Jokes: Dad Has All Day for the Punchline There is nowhere he needs to be, which has somehow made him available to everyone within earshot. The neighbor. The cashier. The person who only stopped to admire the tomatoes. \"I Know A Lot Of Retirement Jokes... But None Of Them Work.\" He gives you a moment to appreciate it. Then another, because he has those now. The coffee stays hot. The calendar stays clear. His audience starts remembering errands. By lunch, he has told it at the hardware store and called home to report how well it went. A polite smile counts. So does somebody shaking their head. Tomorrow looks busy. There is a second cup of coffee to consider and a whole garden center that has not heard this one yet. Dad Approved because he left the job and kept the material.",
+      "category": "T-Shirt",
+      "datePublished": "2026-05-31T19:35:08-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10277845434560",
+      "name": "Seen My Glasses T-Shirt",
+      "url": "https://www.thatdadthing.com/products/seen-my-glasses-funny-dad-memory-joke-t-shirt",
+      "description": "Dad remembers the important things. The thermostat setting. The shortcut nobody asked for. That one time you left a light on in 2014. A Dad Who Never Forgets. Almost. What he can't remember is what went first. Or where he put his glasses. Which, for the record, were just here. This Seen My Glasses T-Shirt celebrates Dad's beautifully selective memory with a joke his whole family has heard before. It's a familiar Dad line, followed by a question they've probably answered a hundred times. Dad has checked the kitchen, the garage, and every pocket twice. He's asked everyone in the house if they've seen his glasses. Nobody has the heart to tell him they're sitting on top of his head. And, naturally, he swears he didn't lose anything. Dad Approved because he remembers exactly where he put them. He just can't remember where that was.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-22T12:47:59-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10250839392448",
+      "name": "Stay In Your Lane T-Shirt",
+      "url": "https://www.thatdadthing.com/products/stay-in-your-lane-t-shirt",
+      "description": "Dad has the grill under control. He also has six volunteer consultants. Stay In Your Lane: Dad Has the Tongs Someone thinks he should flip the burgers. Someone else suggests more heat. A third person, who arrived carrying only a bag of chips, has a surprisingly detailed theory about smoke. Dad listens. Dad nods. Dad does the little double-click with the tongs. Then comes the look. \"Stay In Your Lane, Bud.\" It's delivered with a grin, but the tongs stay firmly in his hand. He has spent years learning this grill's moods, hot spots, and one wheel that refuses to turn. He can handle a burger. A few minutes later, everyone is eating. The advice stops. Dad takes a seat and waits for somebody to ask how he gets them so good. He has time to explain. Dinner is handled. Dad Approved because the guy holding the chips can probably trust the guy holding the tongs.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-06T07:00:04-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8610181873856",
+      "name": "The Original Source T-Shirt",
+      "url": "https://www.thatdadthing.com/products/the-original-source-t-shirt",
+      "description": "You asked Dad what pressure the tires should be. He started with his first car. The Original Source: Dad-A-Base Advice Comes With a Story Welcome to the Dad-A-Base. \"Access Granted.\" No appointment necessary, and there is absolutely no limit on how long an answer can take. Dad has facts. Dad has opinions. Dad remembers a guy who had this exact problem, although it may have been a completely different problem involving a water heater. He follows you to the driveway. Checks the tires. Finds the gauge he wanted you to keep in the glove box. Somewhere between the helpful explanation and the story about driving through a blizzard, your original question gets answered. Then he asks if you need gas money. Or lunch. Or him to take a quick look at that noise before you go. The Original Source has always included a little more than you asked for. Dad Approved because looking after you is the one subject he will never run out of.",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-17T18:43:34-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10286767440064",
+      "name": "The Shortcut T-Shirt",
+      "url": "https://www.thatdadthing.com/products/the-shortcut-t-shirt",
+      "description": "Dad says, \"I know a shortcut,\" and suddenly the drive includes a scenic overlook and a place that sells pie. Dad's Shortcut Takes the Scenic Route The highway would save twenty minutes. Dad has a mountain view to show everyone, a picnic spot by the creek, and very specific opinions about which slice to order. By the time the family gets back in the car, someone is asking if they can come this way next year. Dad considers that an excellent travel time. Dad Approved because the best family stories rarely take the fastest route. Filed in Dad-a-Pedia: Shortcut",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-27T07:56:36-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "10257048240320",
+      "name": "Tunnel Champion T-Shirt",
+      "url": "https://www.thatdadthing.com/products/tunnel-champion-t-shirt",
+      "description": "Dad has held the family title for years. Nobody remembers agreeing to the rules. Every Family Road Trip Has a Tunnel Champion Every family road trip has its traditions. Snacks. Bathroom breaks. Someone asking if we're there yet. And then there's Dad. The moment a tunnel appears, he's already preparing. Deep breath. Eyes forward. Game face on. He's holding his breath until the other side, and apparently we're all supposed to be competing. Nobody volunteered. Nobody knows the score. And somehow, Dad has been the undefeated Family Breath-Holding Champion since 1987. The kids have grown up. The family car has changed. Mom still refuses to participate. But Dad? Still undefeated. Still insufferable. Still your champion. Dad Approved. Because nobody argues with the reigning champion. Especially when he makes the rules.",
+      "category": "T-Shirt",
+      "datePublished": "2026-10-08T07:00:07-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8594277630144",
+      "name": "Uncanny Resemblance T-Shirt",
+      "url": "https://www.thatdadthing.com/products/uncanny-resemblance-t-shirt",
+      "description": "The family is doing impressions of Dad. Dad is giving them pointers. I Resemble That Remark: Dad Knows His Own Material Someone folds their arms and asks who touched the thermostat. Someone else announces a shortcut that adds twenty minutes. Then comes the impression of Dad holding up a leftover screw and saying, \"Better keep that.\" He should probably defend himself. Instead, he corrects the delivery. The thermostat question needs a longer pause. The shortcut saves time when the lights cooperate. And that screw came in handy once, although he can't recall exactly when. \"I Resemble That Remark.\" Dad settles back, grinning. These people have been paying attention. They know the sayings, the little rituals, even the noise he makes when he gets out of a chair. He gives the performance two thumbs up. Then checks the thermostat on his way to the kitchen. Dad Approved because a family impression this accurate deserves notes from the original.",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-03T12:43:10-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
+    },
+    {
+      "id": "8596876099776",
+      "name": "Pass the Who'sYourSisterSauce T-Shirt",
+      "url": "https://www.thatdadthing.com/products/whos-your-sister-t-shirt",
+      "description": "Dad has been waiting for someone to ask for the sauce since the potatoes arrived. Worcestershire Sauce: Dad's Favorite Dinner Table Pronunciation Lesson The bottle is sitting right beside him. He could pass it quietly. But someone has just stumbled over the name, and an opportunity like this deserves his full attention. He puts down his fork. Clears his throat. Looks around to make sure the far end of the table is listening. \"WhosYourSisterSauce.\" A pause, followed by \"You're Welcome.\" Dad has solved pronunciation for the entire household. The household would still like the bottle. From here on, every request is a callback. Someone tries saying \"the brown bottle.\" Dad pretends he needs clarification. Someone reaches around him. He helpfully offers the lesson again. Dinner runs a few minutes long. By next Sunday, somebody else says it first. Dad beams. His work here is done. Dad Approved because the family recipe could always use another helping of that joke.",
+      "category": "T-Shirt",
+      "datePublished": "2026-06-06T05:11:12-04:00",
+      "dateModified": "2026-11-02T09:34:18-05:00"
     }
-  ],
-  "note": "Product data should be refreshed from Shopify as the live catalog grows."
+  ]
 }
-

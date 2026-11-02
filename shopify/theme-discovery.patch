@@ -1,0 +1,60 @@
+--- a/layout/theme.liquid
++++ b/layout/theme.liquid
+@@ -162,22 +162,20 @@
+   product schema rendering, FAQ schema rendering, and GA4.
+   AI repository target: https://github.com/ThatDadThing/thatdadthing-llms
+ -->
+-<link rel="manifest" href="https://thatdadthing.github.io/thatdadthing-llms/manifest.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-
+-<!--
+-  That Dad Thing theme head block.
+-  Maintains local fonts, organization schema, AI feed discovery,
+-  product schema rendering, FAQ schema rendering, and GA4.
+-  AI repository target: https://github.com/ThatDadThing/thatdadthing-llms
+--->
+-<link rel="alternate" type="text/plain" title="AI Crawl Policy" href="https://thatdadthing.github.io/thatdadthing-llms/ai.txt?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-
+-<link rel="alternate" type="application/json" title="Product Catalog"    href="https://thatdadthing.github.io/thatdadthing-llms/products.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-<link rel="alternate" type="application/json" title="Collections"        href="https://thatdadthing.github.io/thatdadthing-llms/collections.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-<link rel="alternate" type="application/json" title="Blog Posts"         href="https://thatdadthing.github.io/thatdadthing-llms/blogcatalog.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-<link rel="alternate" type="application/json" title="Press Info"         href="https://thatdadthing.github.io/thatdadthing-llms/press.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-<link rel="alternate" type="application/json" title="FAQ Data"           href="https://thatdadthing.github.io/thatdadthing-llms/faq.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
+-<link rel="alternate" type="application/json" title="Customer Reviews"   href="https://thatdadthing.github.io/thatdadthing-llms/reviews.json?v={{ 'now' | date: '%Y-%m-%d' }}" />
++<link rel="alternate" type="application/json" title="AI Feed Directory" href="https://thatdadthing.github.io/thatdadthing-llms/manifest.json" />
++
++<!--
++  That Dad Thing theme head block.
++  Maintains local fonts, organization schema, AI feed discovery,
++  product schema rendering, FAQ schema rendering, and GA4.
++  AI repository target: https://github.com/ThatDadThing/thatdadthing-llms
++-->
++<link rel="alternate" type="text/plain" title="AI Crawl Policy" href="https://thatdadthing.github.io/thatdadthing-llms/ai.txt" />
++
++<link rel="alternate" type="application/json" title="Product Catalog"    href="https://thatdadthing.github.io/thatdadthing-llms/products.json" />
++<link rel="alternate" type="application/json" title="Collections"        href="https://thatdadthing.github.io/thatdadthing-llms/collections.json" />
++<link rel="alternate" type="application/json" title="Blog Posts"         href="https://thatdadthing.github.io/thatdadthing-llms/blogcatalog.json" />
++<link rel="alternate" type="application/json" title="FAQ Data"           href="https://thatdadthing.github.io/thatdadthing-llms/faq.json" />
+ <link rel="alternate" type="application/xml"  title="AI Sitemap"         href="https://thatdadthing.github.io/thatdadthing-llms/ai-sitemap.xml" />
+ <link rel="alternate" type="application/json" title="AI Manifest"        href="https://thatdadthing.github.io/thatdadthing-llms/ai-manifest.json" />
+ 
+@@ -201,18 +199,15 @@
+   "@context": "https://schema.org",
+   "@type": "Dataset",
+   "name": "That Dad Thing AI Feed Directory",
+-  "description": "Machine-readable feeds for That Dad Thing (TDT): products, collections, blog posts, press, FAQ, and reviews.",
++  "description": "Machine-readable public feeds for That Dad Thing: products, collections, articles, FAQs, and brand context.",
+   "url": "https://thatdadthing.com",
+-  "keywords": ["That Dad Thing", "TDT", "dad gifts", "dad jokes", "dadisms", "dad logic", "dad sightings", "AI feeds", "structured data", "Product", "FAQ", "Press"],
++  "keywords": ["That Dad Thing", "TDT", "dad gifts", "dad jokes", "dadisms", "dad logic", "dad sightings", "AI feeds", "structured data", "Product", "FAQ"],
+   "creator": { "@type": "Organization", "name": "That Dad Thing" },
+-  "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+   "distribution": [
+     { "@type": "DataDownload", "name": "Products",         "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/products.json" },
+     { "@type": "DataDownload", "name": "Collections",      "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/collections.json" },
+     { "@type": "DataDownload", "name": "Blog Catalog",     "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/blogcatalog.json" },
+-    { "@type": "DataDownload", "name": "Press",            "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/press.json" },
+     { "@type": "DataDownload", "name": "FAQ",              "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/faq.json" },
+-    { "@type": "DataDownload", "name": "Reviews",          "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/reviews.json" },
+     { "@type": "DataDownload", "name": "AI Sitemap (XML)", "encodingFormat": "application/xml",  "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/ai-sitemap.xml" },
+     { "@type": "DataDownload", "name": "AI Manifest",      "encodingFormat": "application/json", "contentUrl": "https://thatdadthing.github.io/thatdadthing-llms/ai-manifest.json" }
+   ]
