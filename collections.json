@@ -8,6 +8,9 @@
       "url": "https://www.thatdadthing.com/collections/%E2%9A%A1-fully-charged-rarely-useful",
       "description": "",
       "productCount": 1,
+      "productIds": [
+        "8734396612800"
+      ],
       "dateModified": "2026-09-16T13:48:21-04:00"
     },
     {
@@ -16,15 +19,10 @@
       "url": "https://www.thatdadthing.com/collections/%E2%9D%A4%EF%B8%8F-one-day-a-year-they-appreciate-us",
       "description": "",
       "productCount": 1,
+      "productIds": [
+        "8594880889024"
+      ],
       "dateModified": "2026-09-16T10:09:25-04:00"
-    },
-    {
-      "id": "352793592000",
-      "name": "🍼 No Manual. No Problem.",
-      "url": "https://www.thatdadthing.com/collections/%F0%9F%8D%BC-no-manual-no-problem",
-      "description": "",
-      "productCount": 0,
-      "dateModified": "2026-07-08T16:42:15-04:00"
     },
     {
       "id": "352793559232",
@@ -32,6 +30,9 @@
       "url": "https://www.thatdadthing.com/collections/%F0%9F%8D%BC-send-coffee-and-sleep",
       "description": "",
       "productCount": 1,
+      "productIds": [
+        "10280212037824"
+      ],
       "dateModified": "2026-10-23T07:00:05-04:00"
     },
     {
@@ -40,6 +41,9 @@
       "url": "https://www.thatdadthing.com/collections/%F0%9F%8E%81-finally-something-hell-actually-use",
       "description": "",
       "productCount": 1,
+      "productIds": [
+        "8599662788800"
+      ],
       "dateModified": "2026-09-16T10:10:17-04:00"
     },
     {
@@ -48,39 +52,10 @@
       "url": "https://www.thatdadthing.com/collections/%F0%9F%8E%84-dads-favorite-season-to-complain-about",
       "description": "",
       "productCount": 1,
+      "productIds": [
+        "10279350829248"
+      ],
       "dateModified": "2026-10-22T12:48:21-04:00"
-    },
-    {
-      "id": "352793657536",
-      "name": "🏅 Most Likely to Be Regifted (But Won't Be)",
-      "url": "https://www.thatdadthing.com/collections/%F0%9F%8F%85-most-likely-to-be-regifted-but-wont-be",
-      "description": "",
-      "productCount": 0,
-      "dateModified": "2026-07-08T16:42:15-04:00"
-    },
-    {
-      "id": "352785137856",
-      "name": "🏆 Loudest Fan in the Bleachers",
-      "url": "https://www.thatdadthing.com/collections/%F0%9F%8F%86-loudest-fan-in-the-bleachers",
-      "description": "",
-      "productCount": 0,
-      "dateModified": "2026-07-08T16:42:15-04:00"
-    },
-    {
-      "id": "352793624768",
-      "name": "👴 Leveled Up",
-      "url": "https://www.thatdadthing.com/collections/%F0%9F%91%B4-leveled-up",
-      "description": "",
-      "productCount": 0,
-      "dateModified": "2026-07-08T16:42:15-04:00"
-    },
-    {
-      "id": "352785072320",
-      "name": "💪 Peak Physical Comedy",
-      "url": "https://www.thatdadthing.com/collections/%F0%9F%92%AA-peak-physical-comedy",
-      "description": "",
-      "productCount": 0,
-      "dateModified": "2026-07-08T16:42:15-04:00"
     },
     {
       "id": "352785006784",
@@ -88,6 +63,15 @@
       "url": "https://www.thatdadthing.com/collections/%F0%9F%93%96-the-gospel-according-to-dad",
       "description": "",
       "productCount": 7,
+      "productIds": [
+        "10250839392448",
+        "10268760899776",
+        "10275289792704",
+        "10282048520384",
+        "10290923667648",
+        "8617233776832",
+        "8751362965696"
+      ],
       "dateModified": "2026-10-29T07:01:33-04:00"
     },
     {
@@ -96,6 +80,10 @@
       "url": "https://www.thatdadthing.com/collections/%F0%9F%94%A7-ill-fix-it-this-weekend",
       "description": "",
       "productCount": 2,
+      "productIds": [
+        "10240404783296",
+        "8617245638848"
+      ],
       "dateModified": "2026-09-30T07:00:04-04:00"
     },
     {
@@ -104,6 +92,12 @@
       "url": "https://www.thatdadthing.com/collections/%F0%9F%9A%97-are-we-there-yet-no",
       "description": "",
       "productCount": 4,
+      "productIds": [
+        "10253133807808",
+        "10257048240320",
+        "10286767440064",
+        "8732688220352"
+      ],
       "dateModified": "2026-10-27T07:56:37-04:00"
     },
     {
@@ -111,8 +105,49 @@
       "name": "📚 The Full Dad-a-Log™",
       "url": "https://www.thatdadthing.com/collections/all",
       "description": "The complete collection of Dadisms, questionable wisdom, and wearable evidence.",
-      "productCount": 336,
-      "dateModified": "2026-10-30T07:00:05-04:00"
+      "productCount": 39,
+      "productIds": [
+        "10240404783296",
+        "10250839392448",
+        "10251026825408",
+        "10251027185856",
+        "10251027644608",
+        "10253133807808",
+        "10257048240320",
+        "10260451786944",
+        "10263906517184",
+        "10268760899776",
+        "10269704618176",
+        "10271411011776",
+        "10275289792704",
+        "10277845434560",
+        "10279350829248",
+        "10280212037824",
+        "10282048520384",
+        "10283797217472",
+        "10286767440064",
+        "10290923667648",
+        "10298684932288",
+        "10302087299264",
+        "8591901458624",
+        "8593920262336",
+        "8594277630144",
+        "8594697879744",
+        "8594880889024",
+        "8596876099776",
+        "8599662788800",
+        "8610181873856",
+        "8617222635712",
+        "8617233776832",
+        "8617245638848",
+        "8731564802240",
+        "8732688220352",
+        "8734396612800",
+        "8735218565312",
+        "8740797513920",
+        "8751362965696"
+      ],
+      "dateModified": "2026-11-02T07:00:06-05:00"
     },
     {
       "id": "352784941248",
@@ -120,6 +155,12 @@
       "url": "https://www.thatdadthing.com/collections/because-i-said-so",
       "description": "",
       "productCount": 4,
+      "productIds": [
+        "10268760899776",
+        "10271411011776",
+        "8594697879744",
+        "8610181873856"
+      ],
       "dateModified": "2026-10-16T07:00:08-04:00"
     },
     {
@@ -128,6 +169,12 @@
       "url": "https://www.thatdadthing.com/collections/dad-at-play",
       "description": "Dad said it was just for fun. The Dad at Play collection puts the yellow DAD AT PLAY warning sign on funny sports dad T-shirts for backyard legends and family MVPs. Each activity gets its own figure, with the same fair warning: Dad has entered the game.",
       "productCount": 4,
+      "productIds": [
+        "10251026825408",
+        "10251027185856",
+        "10251027644608",
+        "10302087299264"
+      ],
       "dateModified": "2026-10-30T07:00:05-04:00"
     },
     {
@@ -135,8 +182,25 @@
       "name": "😄 Groan & Bear It",
       "url": "https://www.thatdadthing.com/collections/dad-jokes",
       "description": "",
-      "productCount": 16,
-      "dateModified": "2026-10-29T16:33:31-04:00"
+      "productCount": 15,
+      "productIds": [
+        "10260451786944",
+        "10263906517184",
+        "10269704618176",
+        "10275289792704",
+        "10277845434560",
+        "10279350829248",
+        "10283797217472",
+        "10298684932288",
+        "8591901458624",
+        "8593920262336",
+        "8594277630144",
+        "8596876099776",
+        "8617222635712",
+        "8735218565312",
+        "8740797513920"
+      ],
+      "dateModified": "2026-11-02T07:00:06-05:00"
     },
     {
       "id": "352785039552",
@@ -144,6 +208,9 @@
       "url": "https://www.thatdadthing.com/collections/grill-sergeant",
       "description": "",
       "productCount": 1,
+      "productIds": [
+        "8596876099776"
+      ],
       "dateModified": "2026-07-08T17:04:41-04:00"
     },
     {
@@ -151,8 +218,32 @@
       "name": "New | 🚗 Just Rolled In",
       "url": "https://www.thatdadthing.com/collections/just-rolled-in",
       "description": "",
-      "productCount": 21,
-      "dateModified": "2026-10-30T07:22:06-04:00"
+      "productCount": 22,
+      "productIds": [
+        "10250839392448",
+        "10251026825408",
+        "10251027185856",
+        "10251027644608",
+        "10253133807808",
+        "10257048240320",
+        "10260451786944",
+        "10263906517184",
+        "10268760899776",
+        "10269704618176",
+        "10271411011776",
+        "10275289792704",
+        "10277845434560",
+        "10279350829248",
+        "10280212037824",
+        "10282048520384",
+        "10283797217472",
+        "10286767440064",
+        "10290923667648",
+        "10298684932288",
+        "10302087299264",
+        "8617222635712"
+      ],
+      "dateModified": "2026-11-02T07:01:15-05:00"
     }
   ]
 }
