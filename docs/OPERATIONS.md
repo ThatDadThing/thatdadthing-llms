@@ -59,3 +59,5 @@ mentions/citations and exact links without treating one result as universal visi
 ## Mandatory collection gate
 
 Before deployment, verify every included collection has at least one current public catalog product. Empty and draft-only collections are excluded automatically on each rebuild. Do not publish or activate a collection to satisfy feed coverage. Existing published empty Shopify collections require a separate explicit decision before unpublishing.
+
+Public source requests are paced to at most one start per second across workers. HTTP429 honors Retry-After up to60seconds (default30seconds); longer requested delays stop the build for later retry. Access challenges/403 do not trigger repeated challenge requests. Validation runs on pull requests only, avoiding duplicate push/PR source crawls.

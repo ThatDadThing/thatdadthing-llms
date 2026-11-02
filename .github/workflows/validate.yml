@@ -1,8 +1,6 @@
 name: Validate discovery feeds
 on:
   pull_request:
-  push:
-    branches: ['codex/**']
 permissions:
   contents: read
 jobs:

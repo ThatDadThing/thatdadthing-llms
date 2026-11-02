@@ -13,3 +13,5 @@
 ## 2026-11-02 - Hold empty collections
 
 Require actual paginated public product membership; exclude empty and draft-only collections. Verify productIds/counts and prevent invalid collection records from passing output validation. Source health reports the eligibility counts. No Shopify publication settings changed.
+
+Repeated CI exposed HTTP429 throttling. Added shared request pacing and Retry-After backoff, and removed duplicate push validation triggers. No validation/eligibility gate was weakened.

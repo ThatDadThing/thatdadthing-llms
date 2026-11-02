@@ -12,6 +12,9 @@ import re
 import os
 import subprocess
 import time
+import threading
+from email.utils import parsedate_to_datetime
+from urllib.error import HTTPError
 import unicodedata
 from urllib.parse import urlsplit, urlunsplit, quote, unquote
 from urllib.request import Request, urlopen
@@ -126,6 +129,19 @@ def walk_entities(value):
         for child in value:
             yield from walk_entities(child)
 
+def retry_delay(error):
+    value = error.headers.get("Retry-After", "") if error.headers else ""
+    try:
+        seconds = float(value)
+    except (TypeError, ValueError):
+        try:
+            seconds = (parsedate_to_datetime(value) - dt.datetime.now(dt.timezone.utc)).total_seconds()
+        except (TypeError, ValueError):
+            seconds = 30
+    require(seconds <= 60, "Source requested a longer retry interval; retry this build later")
+    return max(1, seconds)
+
+
 class Source:
     def __init__(self, cache, offline=False):
         self.cache = Path(cache)
@@ -133,6 +149,16 @@ class Source:
         self.offline = offline
         self.lineage = {}
         self.captured = {}
+        self.network_lock = threading.Lock()
+        self.last_request = 0
+
+    def wait_for_request_slot(self):
+        # Shared across page-fetch workers: respect the storefront instead of bursting requests.
+        with self.network_lock:
+            delay = 1.0 - (time.monotonic() - self.last_request)
+            if delay > 0:
+                time.sleep(delay)
+            self.last_request = time.monotonic()
 
     def get(self, url):
         p = urlsplit(url)
@@ -145,15 +171,19 @@ class Source:
         else:
             for attempt in range(3):
                 try:
+                    self.wait_for_request_slot()
                     if os.name == "nt":
                         # Use Windows certificate trust through .NET; never disable TLS validation.
                         env = dict(os.environ, TDT_SOURCE_URL=url, TDT_SOURCE_UA=UA)
                         command = ("$ErrorActionPreference='Stop'; "
-                            "$r=Invoke-WebRequest -Uri $env:TDT_SOURCE_URL -UserAgent $env:TDT_SOURCE_UA -TimeoutSec 30; "
-                            "@{url=$r.BaseResponse.RequestMessage.RequestUri.AbsoluteUri;content=$r.Content}|ConvertTo-Json -Compress")
+                            "$r=Invoke-WebRequest -Uri $env:TDT_SOURCE_URL -UserAgent $env:TDT_SOURCE_UA -TimeoutSec 30 -SkipHttpErrorCheck; "
+                            "@{url=$r.BaseResponse.RequestMessage.RequestUri.AbsoluteUri;status=[int]$r.StatusCode;retryAfter=($r.Headers['Retry-After'] -join '');content=$r.Content}|ConvertTo-Json -Compress")
                         proc = subprocess.run(["pwsh", "-NoProfile", "-NonInteractive", "-Command", command],
                             env=env, capture_output=True, text=True, encoding="utf-8", timeout=45, check=True)
                         result = json.loads(proc.stdout)
+                        if result["status"] != 200:
+                            raise HTTPError(url, result["status"], "Public source request failed",
+                                            {"Retry-After": result.get("retryAfter", "")}, None)
                         require(urlsplit(result["url"]).hostname == p.hostname, "Cross-host redirect")
                         text = result["content"]
                     else:
@@ -162,6 +192,10 @@ class Source:
                             require(urlsplit(r.url).hostname == p.hostname, "Cross-host redirect")
                             text = r.read().decode("utf-8")
                     break
+                except HTTPError as exc:
+                    if attempt == 2 or exc.code not in (429, 500, 502, 503, 504):
+                        raise
+                    time.sleep(retry_delay(exc) if exc.code == 429 else attempt + 1)
                 except Exception:
                     if attempt == 2:
                         raise

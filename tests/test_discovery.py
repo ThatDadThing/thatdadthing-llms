@@ -99,6 +99,19 @@ class Tests(unittest.TestCase):
         with self.assertRaisesRegex(d.Failure, "count disagrees"):
             d.validate(bundle)
 
+    def test_rate_limit_backoff_respects_retry_after(self):
+        from urllib.error import HTTPError
+        self.assertEqual(d.retry_delay(HTTPError(d.SITE,429,"limited",{"Retry-After":"45"},None)),45)
+
+    def test_rate_limit_backoff_defaults_conservatively(self):
+        from urllib.error import HTTPError
+        self.assertEqual(d.retry_delay(HTTPError(d.SITE,429,"limited",{},None)),30)
+
+    def test_long_rate_limit_interval_stops_build(self):
+        from urllib.error import HTTPError
+        with self.assertRaisesRegex(d.Failure, "retry this build later"):
+            d.retry_delay(HTTPError(d.SITE,429,"limited",{"Retry-After":"300"},None))
+
     def test_unlisted_product_cannot_enter_feed(self):
         f = Fixture()
         key = d.SITE + "/products.json?limit=250&page=1"
