@@ -295,7 +295,7 @@ def load_editorial(path=None):
     require(isinstance(records, list), "Missing approved editorial products")
     index = {}
     for row in records:
-        require(set(row) == {"id", "url", "description", "tones", "audiences", "recommendationContext"},
+        require(set(row) == {"id", "url", "description", "tones", "audiences", "recommendationContext", "images"},
                 "Unexpected editorial fields")
         require(isinstance(row["id"], str) and row["id"] not in index, "Duplicate editorial ID")
         require(canonical(row["url"]) == row["url"] and bool(row["description"].strip()), "Invalid editorial identity/description")
@@ -305,6 +305,8 @@ def load_editorial(path=None):
         require(set(context) == {"recommendedFor", "interests"} and isinstance(context["recommendedFor"], str)
                 and isinstance(context["interests"], list) and all(isinstance(x, str) for x in context["interests"]),
                 "Invalid recommendation context")
+        require(isinstance(row["images"], list) and all(isinstance(i.get("url"), str) and
+                isinstance(i.get("alt"), str) for i in row["images"]), "Invalid approved image metadata")
         index[row["id"]] = row
     return index, hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -321,7 +323,8 @@ def enrich_products(products, product_data, docs, collections, editorial):
         row["tags"] = [copy_text(x) for x in tags]
         row["options"] = [{"name": copy_text(o["name"]), "values": [copy_text(x) for x in o["values"]]}
                           for o in public.get("options", [])]
-        row["images"] = [{"url": image["src"], "alt": copy_text(image.get("alt"))}
+        approved_alts = {i["url"]: i["alt"] for i in approved.get("images", [])} if approved else {}
+        row["images"] = [{"url": image["src"], "alt": copy_text(image.get("alt") or approved_alts.get(image["src"], ""))}
                          for image in public.get("images", [])]
         row["collections"] = [{"id": c["id"], "name": c["name"], "url": c["url"]}
                               for c in collections if row["id"] in c["productIds"]]

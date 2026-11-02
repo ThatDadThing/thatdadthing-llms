@@ -276,7 +276,7 @@ if __name__ == "__main__":
 
 class EnrichmentTests(unittest.TestCase):
     def approved(self):
-        return {"1": {"id": "1", "url": P, "description": "Approved meta description",
+        return {"1": {"id": "1", "url": P, "images": [], "description": "Approved meta description",
                        "tones": ["Dry Snark"], "audiences": ["Adult"],
                        "recommendationContext": {"recommendedFor": "Dads who like science", "interests": ["science"]}}}
 
@@ -320,3 +320,16 @@ class EnrichmentTests(unittest.TestCase):
             path.write_text(json.dumps({"schemaVersion": 1, "products": [row, row]}))
             with self.assertRaisesRegex(d.Failure, "Duplicate editorial"):
                 d.load_editorial(path)
+
+
+    def test_approved_alt_only_follows_a_matching_live_image(self):
+        f = Fixture()
+        key = d.SITE + "/products.json?limit=250&page=1"
+        data = json.loads(f.values[key])
+        data["products"][0]["images"] = [{"src": "https://cdn.shopify.com/live.webp"}]
+        f.values[key] = json.dumps(data)
+        editorial = self.approved()
+        editorial["1"]["images"] = [{"url": "https://cdn.shopify.com/live.webp", "alt": "Approved science design"},
+                                     {"url": "https://cdn.shopify.com/removed.webp", "alt": "Removed image"}]
+        row = d.build(f, ASOF, editorial)["products.json"]["products"][0]
+        self.assertEqual(row["images"], [{"url": "https://cdn.shopify.com/live.webp", "alt": "Approved science design"}])
