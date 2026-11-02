@@ -19,7 +19,7 @@ python scripts/discovery.py --output build/replay --cache build/public-cache --o
 
 Only `build/site` is a deployment artifact. No credentials, Notion drafts, Drive artwork,
 private inventory or repository internals enter it. Root feed files are reviewed snapshots;
-the publishing workflow rebuilds them from live public sources before every deployment.
+the publishing workflow rebuilds live facts and applies the approved Notion editorial snapshot before every deployment.
 An offline rebuild uses captured inputs; source capture times remain distinct from build time.
 
 ## Sources and outputs
@@ -44,3 +44,11 @@ as historical files and are not part of the new deployment artifact.
 
 See [data contract](docs/DATA_CONTRACT.md), [operations](docs/OPERATIONS.md) and
 [change log](CHANGELOG.md). Implementation is staged; deployment needs approval.
+
+## Product editorial workflow
+
+Edit and review Product.json Code in Notion first. After Commander approval, import only the
+approved fields into data/approved-products.json in one batch. Automated refreshes preserve
+that editorial data while rereading live Shopify facts. This is an approved snapshot workflow,
+not an automatic Notion integration. Products now include full meta descriptions, recommendation
+context, humor/audience labels, live tags, images/alt text, listed options and public collections.

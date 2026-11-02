@@ -1,4 +1,4 @@
-"""Build supplementary discovery feeds exclusively from the public Shopify storefront."""
+"""Build discovery feeds from public Shopify facts and approved product editorial data."""
 from __future__ import annotations
 import argparse
 import concurrent.futures
@@ -287,8 +287,61 @@ def article_record(url, doc, lastmod, now):
             "description": description, "blog": urlsplit(url).path.split("/")[2],
             "datePublished": published, "dateModified": e.get("dateModified") or lastmod or published}
 
-def build(source, as_of):
+def load_editorial(path=None):
+    path = Path(path) if path else Path(__file__).resolve().parents[1] / "data" / "approved-products.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    require(payload.get("schemaVersion") == 1, "Unsupported editorial schema")
+    records = payload.get("products")
+    require(isinstance(records, list), "Missing approved editorial products")
+    index = {}
+    for row in records:
+        require(set(row) == {"id", "url", "description", "tones", "audiences", "recommendationContext", "images"},
+                "Unexpected editorial fields")
+        require(isinstance(row["id"], str) and row["id"] not in index, "Duplicate editorial ID")
+        require(canonical(row["url"]) == row["url"] and bool(row["description"].strip()), "Invalid editorial identity/description")
+        for key in ("tones", "audiences"):
+            require(isinstance(row[key], list) and all(isinstance(x, str) for x in row[key]), "Invalid editorial labels")
+        context = row["recommendationContext"]
+        require(set(context) == {"recommendedFor", "interests"} and isinstance(context["recommendedFor"], str)
+                and isinstance(context["interests"], list) and all(isinstance(x, str) for x in context["interests"]),
+                "Invalid recommendation context")
+        require(isinstance(row["images"], list) and all(isinstance(i.get("url"), str) and
+                isinstance(i.get("alt"), str) for i in row["images"]), "Invalid approved image metadata")
+        index[row["id"]] = row
+    return index, hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def enrich_products(products, product_data, docs, collections, editorial):
+    for row in products:
+        public = product_data[row["url"]]
+        approved = editorial.get(row["id"])
+        row["description"] = copy_text(docs[row["url"]].description)
+        require(bool(row["description"]), "Missing product meta description")
+        row["brand"] = "That Dad Thing"
+        tags = public.get("tags", [])
+        require(isinstance(tags, list), "Invalid public tags")
+        row["tags"] = [copy_text(x) for x in tags]
+        row["options"] = [{"name": copy_text(o["name"]), "values": [copy_text(x) for x in o["values"]]}
+                          for o in public.get("options", [])]
+        approved_alts = {i["url"]: i["alt"] for i in approved.get("images", [])} if approved else {}
+        row["images"] = [{"url": image["src"], "alt": copy_text(image.get("alt") or approved_alts.get(image["src"], ""))}
+                         for image in public.get("images", [])]
+        row["collections"] = [{"id": c["id"], "name": c["name"], "url": c["url"]}
+                              for c in collections if row["id"] in c["productIds"]]
+        if approved:
+            require(approved["url"] == row["url"], "Approved editorial URL mismatch: " + row["id"])
+            row["description"] = copy_text(approved["description"])
+            row["tones"] = [copy_text(x) for x in approved["tones"]]
+            row["audiences"] = [copy_text(x) for x in approved["audiences"]]
+            row["recommendationContext"] = {
+                "recommendedFor": copy_text(approved["recommendationContext"]["recommendedFor"]),
+                "interests": [copy_text(x) for x in approved["recommendationContext"]["interests"]]}
+    return sum(row["id"] in editorial for row in products)
+
+
+def build(source, as_of, editorial=None):
     now = timestamp(as_of)
+    editorial = editorial or {}
     sitemap = inventory(source)
     product_data = public_products(source, sitemap)
     article_urls = sorted(u for u in sitemap if re.match(r"^/blogs/[^/]+/[^/]+$", urlsplit(u).path))
@@ -323,6 +376,7 @@ def build(source, as_of):
         collections.append({"id": str(p["id"]), "name": " ".join(p["title"].split()), "url": url,
             "description": copy_text(p.get("description")), "productCount": len(member_ids),
             "productIds": member_ids, "dateModified": p["updated_at"]})
+    enriched_count = enrich_products(products, product_data, docs, collections, editorial)
     articles = [article_record(u, docs[u], sitemap[u], now) for u in article_urls]
     faq = [{"question": copy_text(x["question"]), "answer": copy_text(x["answer"]),
             "source": SITE + "/pages/faq"} for x in docs[SITE + "/pages/faq"].details]
@@ -355,6 +409,7 @@ def build(source, as_of):
         "brand.json": {"schemaVersion": 1, "brand": brand},
         "brandvoice.json": {"schemaVersion": 1, "source": SITE + "/pages/faq", "description": tone[0]["answer"]},
     }
+    bundle["products.json"]["schemaVersion"] = 2
     feed_names = list(bundle)
     manifest = {"schemaVersion": 1, "name": "That Dad Thing AI Feed Directory",
         "url": SITE, "repository": "https://github.com/ThatDadThing/thatdadthing-llms",
@@ -373,6 +428,7 @@ def build(source, as_of):
         "sourceSnapshotStartedAt": min(getattr(source, "captured", {}).values(), default=as_of),
         "sourceSnapshotFinishedAt": max(getattr(source, "captured", {}).values(), default=as_of),
         "counts": counts, "coverage": "Exact product and article sitemap reconciliation; collections require verified public product membership",
+        "productEditorial": {"approvedMatched": enriched_count},
         "collectionEligibility": {"examined": len(collection_urls), "included": len(collections), "excludedEmpty": excluded_empty},
         "sourceURLs": dict(sorted(source.lineage.items()))}
     bundle["llms.txt"] = (
@@ -424,6 +480,11 @@ def validate(bundle):
             for k, value in row.items():
                 if isinstance(value, str) and not (filename == "collections.json" and k == "name"):
                     require(all(32 <= ord(c) <= 126 for c in value), "Non-ASCII or multiline field: " + filename + "/" + k)
+    for row in bundle["products.json"]["products"]:
+        require(bool(row.get("description")), "Missing product meta description")
+        for image in row.get("images", []):
+            require(urlsplit(image["url"]).scheme == "https" and urlsplit(image["url"]).hostname == "cdn.shopify.com",
+                    "Unexpected public image host")
     public_ids = {row["id"] for row in bundle["products.json"]["products"]}
     for collection in bundle["collections.json"]["collections"]:
         members = collection.get("productIds")
@@ -432,6 +493,9 @@ def validate(bundle):
                 "Invalid public collection membership")
         require(type(collection.get("productCount")) is int and collection["productCount"] == len(members),
                 "Collection product count disagrees")
+    for row in bundle["products.json"]["products"]:
+        expected = {c["id"] for c in bundle["collections.json"]["collections"] if row["id"] in c["productIds"]}
+        require({c["id"] for c in row.get("collections", [])} == expected, "Product collection mismatch")
     eligibility = bundle["health.json"].get("collectionEligibility", {})
     require(eligibility.get("included") == len(bundle["collections.json"]["collections"]) and
             eligibility.get("excludedEmpty", -1) >= 0 and
@@ -472,7 +536,9 @@ def main():
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--as-of", default=dt.datetime.now(dt.timezone.utc).isoformat())
     args = parser.parse_args()
-    bundle = build(Source(args.cache, args.offline), args.as_of)
+    editorial, digest = load_editorial()
+    bundle = build(Source(args.cache, args.offline), args.as_of, editorial)
+    bundle["health.json"]["productEditorial"]["sha256"] = digest
     write_bundle(bundle, args.output)
     print(json.dumps(bundle["health.json"]["counts"], sort_keys=True))
 

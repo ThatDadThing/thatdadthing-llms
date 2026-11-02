@@ -210,6 +210,7 @@ class Tests(unittest.TestCase):
         payload = json.loads(f.values[key])
         payload["products"][0]["body_html"] = "<p>Approved public update</p>"
         f.values[key] = json.dumps(payload)
+        f.values[P] = document(P).replace("Public summary", "Approved public update")
         updated = d.build(f, ASOF)
         self.assertEqual(updated["products.json"]["products"][0]["description"], "Approved public update")
         self.assertNotEqual(before["health.json"]["sourceFingerprint"], updated["health.json"]["sourceFingerprint"])
@@ -271,3 +272,64 @@ class HealthTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class EnrichmentTests(unittest.TestCase):
+    def approved(self):
+        return {"1": {"id": "1", "url": P, "images": [], "description": "Approved meta description",
+                       "tones": ["Dry Snark"], "audiences": ["Adult"],
+                       "recommendationContext": {"recommendedFor": "Dads who like science", "interests": ["science"]}}}
+
+    def test_editorial_survives_refresh_and_live_options_win(self):
+        f = Fixture()
+        key = d.SITE + "/products.json?limit=250&page=1"
+        data = json.loads(f.values[key])
+        data["products"][0].update(tags=["science"], options=[{"name": "Color", "values": ["Moss"]}],
+                                  images=[{"src": "https://cdn.shopify.com/test_image.webp", "alt": "Science shirt"}])
+        f.values[key] = json.dumps(data)
+        row = d.build(f, ASOF, self.approved())["products.json"]["products"][0]
+        self.assertEqual(row["description"], "Approved meta description")
+        self.assertEqual(row["options"][0]["values"], ["Moss"])
+        self.assertEqual(row["images"][0]["url"], "https://cdn.shopify.com/test_image.webp")
+        self.assertEqual(row["recommendationContext"]["interests"], ["science"])
+        self.assertEqual(row["collections"][0]["url"], C)
+
+    def test_editorial_cannot_add_private_product(self):
+        editorial = self.approved()
+        editorial["private"] = dict(editorial["1"], id="private", url=d.SITE + "/products/private")
+        bundle = d.build(Fixture(), ASOF, editorial)
+        self.assertEqual([p["id"] for p in bundle["products.json"]["products"]], ["1"])
+        self.assertEqual(bundle["health.json"]["productEditorial"]["approvedMatched"], 1)
+
+    def test_editorial_identity_drift_blocks_release(self):
+        editorial = self.approved()
+        editorial["1"]["url"] = d.SITE + "/products/wrong"
+        with self.assertRaisesRegex(d.Failure, "editorial URL mismatch"):
+            d.build(Fixture(), ASOF, editorial)
+
+    def test_unreviewed_product_uses_public_meta_without_invented_editorial(self):
+        row = d.build(Fixture(), ASOF)["products.json"]["products"][0]
+        self.assertEqual(row["description"], "Public summary")
+        self.assertNotIn("recommendationContext", row)
+
+    def test_approved_data_rejects_duplicate_ids(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "approved.json"
+            row = self.approved()["1"]
+            path.write_text(json.dumps({"schemaVersion": 1, "products": [row, row]}))
+            with self.assertRaisesRegex(d.Failure, "Duplicate editorial"):
+                d.load_editorial(path)
+
+
+    def test_approved_alt_only_follows_a_matching_live_image(self):
+        f = Fixture()
+        key = d.SITE + "/products.json?limit=250&page=1"
+        data = json.loads(f.values[key])
+        data["products"][0]["images"] = [{"src": "https://cdn.shopify.com/live.webp"}]
+        f.values[key] = json.dumps(data)
+        editorial = self.approved()
+        editorial["1"]["images"] = [{"url": "https://cdn.shopify.com/live.webp", "alt": "Approved science design"},
+                                     {"url": "https://cdn.shopify.com/removed.webp", "alt": "Removed image"}]
+        row = d.build(f, ASOF, editorial)["products.json"]["products"][0]
+        self.assertEqual(row["images"], [{"url": "https://cdn.shopify.com/live.webp", "alt": "Approved science design"}])
