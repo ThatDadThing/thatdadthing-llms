@@ -69,3 +69,7 @@ health.json productEditorial records approvedMatched and approved snapshot sha25
 The public product catalog omits alt text on some images. For a current public image URL,
 use its public alt when available, otherwise the approved Notion alt for that exact URL.
 An approved image absent from the fresh public product is never added to the output.
+
+## Article publication dates - November 3, 2026
+
+Use the single visible main article-header time datetime when present, because Shopify JSON-LD can expose creation time as datePublished. Multiple header times fail closed. Pages without a rendered publication date retain the existing JSON-LD fallback. Future chosen dates remain excluded. No source page or theme is modified.

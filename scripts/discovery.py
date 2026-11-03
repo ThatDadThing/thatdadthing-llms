@@ -49,6 +49,9 @@ class Document(HTMLParser):
         self.detail = None
         self.detail_stack = []
         self.in_main = False
+        self.article_depth = 0
+        self.header_depth = 0
+        self.article_published_times = []
         self.summary = False
         self.ignored = 0
         self.text = []
@@ -64,6 +67,12 @@ class Document(HTMLParser):
             self.script = []
         if tag in ("script", "style"):
             self.ignored += 1
+        if tag == "article":
+            self.article_depth += 1
+        if tag == "header":
+            self.header_depth += 1
+        if tag == "time" and self.in_main and self.article_depth and self.header_depth and a.get("datetime"):
+            self.article_published_times.append(a["datetime"])
         if tag == "main":
             self.in_main = True
         if tag == "details" and self.in_main:
@@ -77,6 +86,10 @@ class Document(HTMLParser):
                 self.detail["answer"].append(" ")
 
     def handle_endtag(self, tag):
+        if tag == "article":
+            self.article_depth = max(0, self.article_depth - 1)
+        if tag == "header":
+            self.header_depth = max(0, self.header_depth - 1)
         if tag == "script" and self.script is not None:
             self.scripts.append("".join(self.script))
             self.script = None
@@ -276,7 +289,10 @@ def article_record(url, doc, lastmod, now):
                 articles.append(e)
     require(len(articles) == 1, "Expected one source Article: " + url)
     e = articles[0]
-    published = e.get("datePublished")
+    # Shopify structured_data may use article.created_at for datePublished.
+    # The visible article header renders article.published_at; use it when present.
+    require(len(doc.article_published_times) <= 1, "Ambiguous rendered article publication date: " + url)
+    published = doc.article_published_times[0] if doc.article_published_times else e.get("datePublished")
     require(timestamp(published) <= now, "Future article in public source: " + url)
     entity_url = e.get("mainEntityOfPage", {})
     entity_url = entity_url.get("@id") if isinstance(entity_url, dict) else entity_url

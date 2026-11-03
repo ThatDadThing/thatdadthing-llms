@@ -19,3 +19,5 @@ Repeated CI exposed HTTP429 throttling. Added shared request pacing and Retry-Af
 ## 2026-11-03 - Paired launch JSON handoff
 
 Add the approved Don't Let It Hit Ya meta description, existing Lovably Unhinged tone, Adult audience and five exact-image alt descriptions to the editorial snapshot. Recommendation text remains empty because no separate recommendation copy was approved. The public-source rebuild discovers the live product and Lovably Unhinged article in the existing product/Dad-a-Pedia/blogcatalog contracts. No generator, schema or commerce changes.
+
+Correct article feed publication dates from the visible main article-header time when available; preserve JSON-LD fallback and fail closed on ambiguous/future dates. Four regression tests cover creation-date mismatch, unrelated times, ambiguity and future publication.

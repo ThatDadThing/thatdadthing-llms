@@ -333,3 +333,31 @@ class EnrichmentTests(unittest.TestCase):
                                      {"url": "https://cdn.shopify.com/removed.webp", "alt": "Removed image"}]
         row = d.build(f, ASOF, editorial)["products.json"]["products"][0]
         self.assertEqual(row["images"], [{"url": "https://cdn.shopify.com/live.webp", "alt": "Approved science design"}])
+
+
+class ArticlePublicationDateTests(unittest.TestCase):
+    def rendered(self, dates, extra=""):
+        header = "<article><header>" + "".join(
+            '<time datetime="' + value + '">Publication date</time>' for value in dates
+        ) + "</header>" + extra + "</article>"
+        return d.Document(article(A).replace("</main>", header + "</main>"))
+
+    def test_visible_publication_date_wins_over_creation_date(self):
+        doc = self.rendered(["2026-10-29T12:00:05Z"])
+        row = d.article_record(A, doc, None, d.timestamp(ASOF))
+        self.assertEqual(row["datePublished"], "2026-10-29T12:00:05Z")
+
+    def test_unrelated_time_outside_article_header_is_ignored(self):
+        doc = self.rendered([], '<time datetime="2026-10-29T12:00:05Z">Related item</time>')
+        row = d.article_record(A, doc, None, d.timestamp(ASOF))
+        self.assertEqual(row["datePublished"], "2026-10-01T00:00:00Z")
+
+    def test_ambiguous_header_dates_fail_closed(self):
+        doc = self.rendered(["2026-10-29T12:00:05Z", "2026-10-30T12:00:05Z"])
+        with self.assertRaisesRegex(d.Failure, "Ambiguous rendered"):
+            d.article_record(A, doc, None, d.timestamp(ASOF))
+
+    def test_future_visible_publication_fails_closed(self):
+        doc = self.rendered(["2026-11-03T12:00:05Z"])
+        with self.assertRaisesRegex(d.Failure, "Future article"):
+            d.article_record(A, doc, None, d.timestamp(ASOF))
