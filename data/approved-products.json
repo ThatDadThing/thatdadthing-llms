@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "approvedOn": "2026-11-02",
+  "approvedOn": "2026-11-03",
   "source": "Commander-approved Notion Product.json Code; description uses Notion SEO Description",
   "products": [
     {
@@ -1601,6 +1601,43 @@
         {
           "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Espresso_-_Maybe_I_ll_Just_Crinkle_It_-_T-Shirt.webp?v=1793187136",
           "alt": "Espresso T-shirt with \"I Don't Feel Like Crushing It. Maybe I'll Just Crinkle It.\" in cream and orange lettering."
+        }
+      ]
+    },
+    {
+      "id": "10303470764224",
+      "url": "https://www.thatdadthing.com/products/dont-let-it-hit-ya-t-shirt",
+      "description": "Don't Let It Hit Ya: a funny dad shirt for the man who always gets the last word. Give his legendary doorway farewell a permanent place in the family rotation.",
+      "tones": [
+        "Lovably Unhinged"
+      ],
+      "audiences": [
+        "Adult"
+      ],
+      "recommendationContext": {
+        "recommendedFor": "",
+        "interests": []
+      },
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Pepper-Dont-Let-It-Hit-Ya-T-Shirt.webp?v=1793306044",
+          "alt": "Pepper T-shirt with \"Don't Let It Hit Ya, Where the Good Lord Split Ya\" lettering and swinging saloon doors in cream, gold and orange."
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Black-Dont-Let-It-Hit-Ya-T-Shirt.webp?v=1793306044",
+          "alt": "Black T-shirt with \"Don't Let It Hit Ya, Where the Good Lord Split Ya\" lettering and swinging saloon doors in cream, gold and orange."
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Navy-Dont-Let-It-Hit-Ya-T-Shirt.webp?v=1793306044",
+          "alt": "Navy T-shirt with \"Don't Let It Hit Ya, Where the Good Lord Split Ya\" lettering and swinging saloon doors in cream, gold and orange."
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Moss-Dont-Let-It-Hit-Ya-T-Shirt.webp?v=1793306044",
+          "alt": "Moss T-shirt with \"Don't Let It Hit Ya, Where the Good Lord Split Ya\" lettering and swinging saloon doors in cream, gold and orange."
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0650/8501/4208/files/Blue-Spruce-Dont-Let-It-Hit-Ya-T-Shirt.webp?v=1793306044",
+          "alt": "Blue Spruce T-shirt with \"Don't Let It Hit Ya, Where the Good Lord Split Ya\" lettering and swinging saloon doors in cream, gold and orange."
         }
       ]
     }
