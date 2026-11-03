@@ -177,6 +177,9 @@ class Source:
         p = urlsplit(url)
         require(p.scheme == "https" and p.hostname == "www.thatdadthing.com",
                 "Refusing non-storefront fetch: " + url)
+        request_url = url
+        if p.path.endswith(".xml") and not self.offline:
+            request_url += ("&" if p.query else "?") + "_tdt_snapshot=" + str(time.time_ns())
         path = self.cache / (hashlib.sha256(url.encode()).hexdigest() + ".txt")
         if self.offline:
             require(path.exists(), "Offline fixture missing: " + url)
@@ -187,9 +190,9 @@ class Source:
                     self.wait_for_request_slot()
                     if os.name == "nt":
                         # Use Windows certificate trust through .NET; never disable TLS validation.
-                        env = dict(os.environ, TDT_SOURCE_URL=url, TDT_SOURCE_UA=UA)
+                        env = dict(os.environ, TDT_SOURCE_URL=request_url, TDT_SOURCE_UA=UA)
                         command = ("$ErrorActionPreference='Stop'; "
-                            "$r=Invoke-WebRequest -Uri $env:TDT_SOURCE_URL -UserAgent $env:TDT_SOURCE_UA -TimeoutSec 30 -SkipHttpErrorCheck; "
+                            "$r=Invoke-WebRequest -Uri $env:TDT_SOURCE_URL -UserAgent $env:TDT_SOURCE_UA -Headers @{'Cache-Control'='no-cache'} -TimeoutSec 30 -SkipHttpErrorCheck; "
                             "@{url=$r.BaseResponse.RequestMessage.RequestUri.AbsoluteUri;status=[int]$r.StatusCode;retryAfter=($r.Headers['Retry-After'] -join '');content=$r.Content}|ConvertTo-Json -Compress")
                         proc = subprocess.run(["pwsh", "-NoProfile", "-NonInteractive", "-Command", command],
                             env=env, capture_output=True, text=True, encoding="utf-8", timeout=45, check=True)
@@ -200,7 +203,7 @@ class Source:
                         require(urlsplit(result["url"]).hostname == p.hostname, "Cross-host redirect")
                         text = result["content"]
                     else:
-                        with urlopen(Request(url, headers={"User-Agent": UA}), timeout=30) as r:
+                        with urlopen(Request(request_url, headers={"User-Agent": UA, "Cache-Control": "no-cache"}), timeout=30) as r:
                             require(r.status == 200, "Source did not return 200: " + url)
                             require(urlsplit(r.url).hostname == p.hostname, "Cross-host redirect")
                             text = r.read().decode("utf-8")
