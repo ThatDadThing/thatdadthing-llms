@@ -69,3 +69,20 @@ health.json productEditorial records approvedMatched and approved snapshot sha25
 The public product catalog omits alt text on some images. For a current public image URL,
 use its public alt when available, otherwise the approved Notion alt for that exact URL.
 An approved image absent from the fresh public product is never added to the output.
+
+## Article publication dates - November 3, 2026
+
+Use the single visible main article-header time datetime when present, because Shopify JSON-LD can expose creation time as datePublished. Multiple header times fail closed. Pages without a rendered publication date retain the existing JSON-LD fallback. Future chosen dates remain excluded. No source page or theme is modified.
+
+
+## Explicit 24-hour sitemap-lag approval - November 3, 2026
+Commander approved only product10303470764224 and article636362096832 for a 24-hour
+sitemap-lag exception. data/sitemap-lag-approval.json records exact canonical URLs,
+native actual publication and approval/expiry. The code allowlists those identities.
+Only missing sitemap identities may use it: product must still be in the fresh public
+catalog with matching ID and publication, both pages must fetch with matching canonical,
+and article publication must match the independently verified launch. Unrelated
+mismatches, omitted public catalog records, nonpublic/future pages and expired exceptions
+fail closed. health.json exposes exactly which exceptions were used and their expiry.
+Once sitemap inclusion converges, expired unused entries do not block ordinary refresh.
+No Shopify product/article or collection publication is changed by this feed exception.

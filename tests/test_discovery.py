@@ -333,3 +333,72 @@ class EnrichmentTests(unittest.TestCase):
                                      {"url": "https://cdn.shopify.com/removed.webp", "alt": "Removed image"}]
         row = d.build(f, ASOF, editorial)["products.json"]["products"][0]
         self.assertEqual(row["images"], [{"url": "https://cdn.shopify.com/live.webp", "alt": "Approved science design"}])
+
+
+class ArticlePublicationDateTests(unittest.TestCase):
+    def rendered(self, dates, extra=""):
+        header = "<article><header>" + "".join(
+            '<time datetime="' + value + '">Publication date</time>' for value in dates
+        ) + "</header>" + extra + "</article>"
+        return d.Document(article(A).replace("</main>", header + "</main>"))
+
+    def test_visible_publication_date_wins_over_creation_date(self):
+        doc = self.rendered(["2026-10-29T12:00:05Z"])
+        row = d.article_record(A, doc, None, d.timestamp(ASOF))
+        self.assertEqual(row["datePublished"], "2026-10-29T12:00:05Z")
+
+    def test_unrelated_time_outside_article_header_is_ignored(self):
+        doc = self.rendered([], '<time datetime="2026-10-29T12:00:05Z">Related item</time>')
+        row = d.article_record(A, doc, None, d.timestamp(ASOF))
+        self.assertEqual(row["datePublished"], "2026-10-01T00:00:00Z")
+
+    def test_ambiguous_header_dates_fail_closed(self):
+        doc = self.rendered(["2026-10-29T12:00:05Z", "2026-10-30T12:00:05Z"])
+        with self.assertRaisesRegex(d.Failure, "Ambiguous rendered"):
+            d.article_record(A, doc, None, d.timestamp(ASOF))
+
+    def test_future_visible_publication_fails_closed(self):
+        doc = self.rendered(["2026-11-03T12:00:05Z"])
+        with self.assertRaisesRegex(d.Failure, "Future article"):
+            d.article_record(A, doc, None, d.timestamp(ASOF))
+
+class SitemapExceptionTests(unittest.TestCase):
+    def approval(self, kind="product", url=P, identity="1"):
+        return {url: {"type":kind,"url":url,"id":identity,"publishedAt":"2026-10-01T00:00:00Z",
+                      "approvedAt":"2026-11-01T00:00:00Z","expiresAt":"2026-11-02T00:00:00Z"}}
+
+    def test_only_verified_catalog_identity_is_admitted(self):
+        result = d.public_products(Fixture(), {}, self.approval(), d.timestamp(ASOF))
+        self.assertEqual(set(result), {P})
+        bad = self.approval(); bad[P]["id"] = "wrong"
+        with self.assertRaisesRegex(d.Failure, "identity/publication mismatch"):
+            d.public_products(Fixture(), {}, bad, d.timestamp(ASOF))
+
+    def test_unapproved_missing_identity_still_blocks(self):
+        with self.assertRaisesRegex(d.Failure, "sitemap/catalog mismatch"):
+            d.public_products(Fixture(), {}, {}, d.timestamp(ASOF))
+
+    def test_expired_exception_blocks_missing_but_not_converged(self):
+        after = d.timestamp("2026-11-03T00:00:00Z")
+        with self.assertRaisesRegex(d.Failure, "expired"):
+            d.public_products(Fixture(), {}, self.approval(), after)
+        self.assertEqual(set(d.public_products(Fixture(), {P:None}, self.approval(), after)), {P})
+
+    def test_unrelated_catalog_omission_still_blocks(self):
+        with self.assertRaisesRegex(d.Failure, "sitemap/catalog mismatch"):
+            d.public_products(Fixture(), {P:None,d.SITE+"/products/missing":None}, self.approval(), d.timestamp(ASOF))
+
+    def test_missing_article_requires_matching_public_date(self):
+        f = Fixture(); f.values[d.SITE+"/sitemap.xml"] = f.values[d.SITE+"/sitemap.xml"].replace("<url><loc>"+A+"</loc></url>","")
+        ex = self.approval("article", A, "article")
+        bundle = d.build(f, ASOF, sitemap_exceptions=ex)
+        self.assertEqual(bundle["health.json"]["sitemapExceptions"]["articles"], [A])
+        ex[A]["publishedAt"] = "2026-10-02T00:00:00Z"
+        with self.assertRaisesRegex(d.Failure, "article publication mismatch"):
+            d.build(f, ASOF, sitemap_exceptions=ex)
+
+    def test_missing_article_must_be_publicly_fetchable(self):
+        f = Fixture(); f.values[d.SITE+"/sitemap.xml"] = f.values[d.SITE+"/sitemap.xml"].replace("<url><loc>"+A+"</loc></url>","")
+        del f.values[A]
+        with self.assertRaises(KeyError):
+            d.build(f, ASOF, sitemap_exceptions=self.approval("article", A, "article"))

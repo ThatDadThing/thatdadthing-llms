@@ -49,6 +49,9 @@ class Document(HTMLParser):
         self.detail = None
         self.detail_stack = []
         self.in_main = False
+        self.article_depth = 0
+        self.header_depth = 0
+        self.article_published_times = []
         self.summary = False
         self.ignored = 0
         self.text = []
@@ -64,6 +67,12 @@ class Document(HTMLParser):
             self.script = []
         if tag in ("script", "style"):
             self.ignored += 1
+        if tag == "article":
+            self.article_depth += 1
+        if tag == "header":
+            self.header_depth += 1
+        if tag == "time" and self.in_main and self.article_depth and self.header_depth and a.get("datetime"):
+            self.article_published_times.append(a["datetime"])
         if tag == "main":
             self.in_main = True
         if tag == "details" and self.in_main:
@@ -77,6 +86,10 @@ class Document(HTMLParser):
                 self.detail["answer"].append(" ")
 
     def handle_endtag(self, tag):
+        if tag == "article":
+            self.article_depth = max(0, self.article_depth - 1)
+        if tag == "header":
+            self.header_depth = max(0, self.header_depth - 1)
         if tag == "script" and self.script is not None:
             self.scripts.append("".join(self.script))
             self.script = None
@@ -164,6 +177,9 @@ class Source:
         p = urlsplit(url)
         require(p.scheme == "https" and p.hostname == "www.thatdadthing.com",
                 "Refusing non-storefront fetch: " + url)
+        request_url = url
+        if p.path.endswith(".xml") and not self.offline:
+            request_url += ("&" if p.query else "?") + "_tdt_snapshot=" + str(time.time_ns())
         path = self.cache / (hashlib.sha256(url.encode()).hexdigest() + ".txt")
         if self.offline:
             require(path.exists(), "Offline fixture missing: " + url)
@@ -174,9 +190,9 @@ class Source:
                     self.wait_for_request_slot()
                     if os.name == "nt":
                         # Use Windows certificate trust through .NET; never disable TLS validation.
-                        env = dict(os.environ, TDT_SOURCE_URL=url, TDT_SOURCE_UA=UA)
+                        env = dict(os.environ, TDT_SOURCE_URL=request_url, TDT_SOURCE_UA=UA)
                         command = ("$ErrorActionPreference='Stop'; "
-                            "$r=Invoke-WebRequest -Uri $env:TDT_SOURCE_URL -UserAgent $env:TDT_SOURCE_UA -TimeoutSec 30 -SkipHttpErrorCheck; "
+                            "$r=Invoke-WebRequest -Uri $env:TDT_SOURCE_URL -UserAgent $env:TDT_SOURCE_UA -Headers @{'Cache-Control'='no-cache'} -TimeoutSec 30 -SkipHttpErrorCheck; "
                             "@{url=$r.BaseResponse.RequestMessage.RequestUri.AbsoluteUri;status=[int]$r.StatusCode;retryAfter=($r.Headers['Retry-After'] -join '');content=$r.Content}|ConvertTo-Json -Compress")
                         proc = subprocess.run(["pwsh", "-NoProfile", "-NonInteractive", "-Command", command],
                             env=env, capture_output=True, text=True, encoding="utf-8", timeout=45, check=True)
@@ -187,7 +203,7 @@ class Source:
                         require(urlsplit(result["url"]).hostname == p.hostname, "Cross-host redirect")
                         text = result["content"]
                     else:
-                        with urlopen(Request(url, headers={"User-Agent": UA}), timeout=30) as r:
+                        with urlopen(Request(request_url, headers={"User-Agent": UA, "Cache-Control": "no-cache"}), timeout=30) as r:
                             require(r.status == 200, "Source did not return 200: " + url)
                             require(urlsplit(r.url).hostname == p.hostname, "Cross-host redirect")
                             text = r.read().decode("utf-8")
@@ -227,7 +243,31 @@ def inventory(source):
         require(any(section in u for u in urls), "Empty source section: " + section)
     return urls
 
-def public_products(source, sitemap):
+def load_sitemap_approval():
+    path = Path(__file__).resolve().parents[1] / "data" / "sitemap-lag-approval.json"
+    if not path.exists():
+        return {}
+    approval = json.loads(path.read_text(encoding="utf-8"))
+    allowed = {("product", "10303470764224", SITE + "/products/dont-let-it-hit-ya-t-shirt"),
+               ("article", "636362096832", SITE + "/blogs/dad-a-pedia/lovably-unhinged")}
+    require(approval.get("schemaVersion") == 1, "Invalid sitemap approval schema")
+    start, end = timestamp(approval["approvedAt"]), timestamp(approval["expiresAt"])
+    require(dt.timedelta(0) < end - start <= dt.timedelta(hours=24), "Sitemap approval exceeds 24 hours")
+    result = {}
+    for page in approval["pages"]:
+        require((page["type"], page["id"], page["url"]) in allowed and page["url"] not in result,
+                "Unapproved sitemap exception identity")
+        require(timestamp(page["publishedAt"]) <= start, "Future approval publication")
+        result[page["url"]] = dict(page, approvedAt=approval["approvedAt"], expiresAt=approval["expiresAt"])
+    return result
+
+
+def require_active_exception(page, now):
+    require(timestamp(page["approvedAt"]) <= now <= timestamp(page["expiresAt"]),
+            "Sitemap exception expired or not yet approved: " + page["url"])
+
+
+def public_products(source, sitemap, exceptions=None, now=None):
     records = {}
     for page in range(1, 101):
         payload = json.loads(source.get(SITE + "/products.json?limit=250&page=" + str(page)))
@@ -242,7 +282,15 @@ def public_products(source, sitemap):
     else:
         raise Failure("Product pagination exceeded safety limit")
     expected = {u for u in sitemap if urlsplit(u).path.startswith("/products/")}
-    require(expected == set(records), "Product sitemap/catalog mismatch; refuse partial or unlisted export")
+    exceptions = exceptions or {}
+    require(expected <= set(records), "Product sitemap/catalog mismatch; refuse partial or unlisted export")
+    for url in set(records) - expected:
+        approval = exceptions.get(url)
+        require(approval is not None and approval["type"] == "product", "Product sitemap/catalog mismatch; refuse partial or unlisted export")
+        require_active_exception(approval, now)
+        require(str(records[url]["id"]) == approval["id"] and
+                timestamp(records[url]["published_at"]) == timestamp(approval["publishedAt"]),
+                "Approved sitemap product identity/publication mismatch")
     return records
 
 def collection_products(source, url, published_product_ids):
@@ -276,7 +324,10 @@ def article_record(url, doc, lastmod, now):
                 articles.append(e)
     require(len(articles) == 1, "Expected one source Article: " + url)
     e = articles[0]
-    published = e.get("datePublished")
+    # Shopify structured_data may use article.created_at for datePublished.
+    # The visible article header renders article.published_at; use it when present.
+    require(len(doc.article_published_times) <= 1, "Ambiguous rendered article publication date: " + url)
+    published = doc.article_published_times[0] if doc.article_published_times else e.get("datePublished")
     require(timestamp(published) <= now, "Future article in public source: " + url)
     entity_url = e.get("mainEntityOfPage", {})
     entity_url = entity_url.get("@id") if isinstance(entity_url, dict) else entity_url
@@ -339,12 +390,19 @@ def enrich_products(products, product_data, docs, collections, editorial):
     return sum(row["id"] in editorial for row in products)
 
 
-def build(source, as_of, editorial=None):
+def build(source, as_of, editorial=None, sitemap_exceptions=None):
     now = timestamp(as_of)
     editorial = editorial or {}
     sitemap = inventory(source)
-    product_data = public_products(source, sitemap)
-    article_urls = sorted(u for u in sitemap if re.match(r"^/blogs/[^/]+/[^/]+$", urlsplit(u).path))
+    sitemap_exceptions = sitemap_exceptions or {}
+    product_data = public_products(source, sitemap, sitemap_exceptions, now)
+    used_products = sorted(set(product_data) - set(sitemap))
+    used_articles = []
+    for url, approval in sitemap_exceptions.items():
+        if approval["type"] == "article" and url not in sitemap:
+            require_active_exception(approval, now)
+            used_articles.append(url)
+    article_urls = sorted({u for u in sitemap if re.match(r"^/blogs/[^/]+/[^/]+$", urlsplit(u).path)} | set(used_articles))
     collection_urls = sorted(u for u in sitemap if urlsplit(u).path.startswith("/collections/"))
     page_urls = sorted(set(product_data) | set(article_urls) |
                        {SITE, SITE + "/pages/faq", SITE + "/pages/ai-txt"} | set(collection_urls))
@@ -377,7 +435,11 @@ def build(source, as_of, editorial=None):
             "description": copy_text(p.get("description")), "productCount": len(member_ids),
             "productIds": member_ids, "dateModified": p["updated_at"]})
     enriched_count = enrich_products(products, product_data, docs, collections, editorial)
-    articles = [article_record(u, docs[u], sitemap[u], now) for u in article_urls]
+    articles = [article_record(u, docs[u], sitemap.get(u), now) for u in article_urls]
+    for article in articles:
+        if article["url"] in used_articles:
+            require(timestamp(article["datePublished"]) == timestamp(sitemap_exceptions[article["url"]]["publishedAt"]),
+                    "Approved sitemap article publication mismatch")
     faq = [{"question": copy_text(x["question"]), "answer": copy_text(x["answer"]),
             "source": SITE + "/pages/faq"} for x in docs[SITE + "/pages/faq"].details]
     require(len(faq) >= 1 and all(x["question"] and x["answer"] for x in faq), "No complete FAQ source")
@@ -427,7 +489,9 @@ def build(source, as_of, editorial=None):
     bundle["health.json"] = {"schemaVersion": 1, "generatedAt": as_of, "sourceFingerprint": source_digest,
         "sourceSnapshotStartedAt": min(getattr(source, "captured", {}).values(), default=as_of),
         "sourceSnapshotFinishedAt": max(getattr(source, "captured", {}).values(), default=as_of),
-        "counts": counts, "coverage": "Exact product and article sitemap reconciliation; collections require verified public product membership",
+        "counts": counts, "coverage": "Sitemap reconciliation with explicitly approved expiring exceptions; collections require verified public product membership",
+        "sitemapExceptions": {"products": used_products, "articles": sorted(used_articles),
+            "expiresAt": max((sitemap_exceptions[u]["expiresAt"] for u in used_products + used_articles), default=None)},
         "productEditorial": {"approvedMatched": enriched_count},
         "collectionEligibility": {"examined": len(collection_urls), "included": len(collections), "excludedEmpty": excluded_empty},
         "sourceURLs": dict(sorted(source.lineage.items()))}
@@ -537,7 +601,7 @@ def main():
     parser.add_argument("--as-of", default=dt.datetime.now(dt.timezone.utc).isoformat())
     args = parser.parse_args()
     editorial, digest = load_editorial()
-    bundle = build(Source(args.cache, args.offline), args.as_of, editorial)
+    bundle = build(Source(args.cache, args.offline), args.as_of, editorial, load_sitemap_approval())
     bundle["health.json"]["productEditorial"]["sha256"] = digest
     write_bundle(bundle, args.output)
     print(json.dumps(bundle["health.json"]["counts"], sort_keys=True))

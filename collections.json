@@ -105,7 +105,7 @@
       "name": "📚 The Full Dad-a-Log™",
       "url": "https://www.thatdadthing.com/collections/all",
       "description": "The complete collection of Dadisms, questionable wisdom, and wearable evidence.",
-      "productCount": 39,
+      "productCount": 40,
       "productIds": [
         "10240404783296",
         "10250839392448",
@@ -129,6 +129,7 @@
         "10290923667648",
         "10298684932288",
         "10302087299264",
+        "10303470764224",
         "8591901458624",
         "8593920262336",
         "8594277630144",
@@ -147,7 +148,7 @@
         "8740797513920",
         "8751362965696"
       ],
-      "dateModified": "2026-11-02T07:00:06-05:00"
+      "dateModified": "2026-11-03T09:40:07-05:00"
     },
     {
       "id": "352784941248",
@@ -182,7 +183,7 @@
       "name": "😄 Groan & Bear It",
       "url": "https://www.thatdadthing.com/collections/dad-jokes",
       "description": "",
-      "productCount": 15,
+      "productCount": 16,
       "productIds": [
         "10260451786944",
         "10263906517184",
@@ -192,6 +193,7 @@
         "10279350829248",
         "10283797217472",
         "10298684932288",
+        "10303470764224",
         "8591901458624",
         "8593920262336",
         "8594277630144",
@@ -200,7 +202,7 @@
         "8735218565312",
         "8740797513920"
       ],
-      "dateModified": "2026-11-02T07:00:06-05:00"
+      "dateModified": "2026-11-03T09:40:06-05:00"
     },
     {
       "id": "352785039552",
@@ -218,7 +220,7 @@
       "name": "New | 🚗 Just Rolled In",
       "url": "https://www.thatdadthing.com/collections/just-rolled-in",
       "description": "",
-      "productCount": 22,
+      "productCount": 23,
       "productIds": [
         "10250839392448",
         "10251026825408",
@@ -241,9 +243,10 @@
         "10290923667648",
         "10298684932288",
         "10302087299264",
+        "10303470764224",
         "8617222635712"
       ],
-      "dateModified": "2026-11-02T07:01:15-05:00"
+      "dateModified": "2026-11-03T07:03:12-05:00"
     }
   ]
 }
