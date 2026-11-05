@@ -29,7 +29,7 @@ def fetch(url):
         d.require(r.status == 200 and r.url.startswith(d.FEEDS), "Unexpected feed response")
         return r.read()
 
-def check(max_age_hours=8, expected=None):
+def check(max_age_hours=36, expected=None):
     health = json.loads(fetch(d.FEEDS + "health.json"))
     age = (dt.datetime.now(dt.timezone.utc) - d.timestamp(health["generatedAt"])).total_seconds() / 3600
     d.require(-0.1 <= age <= max_age_hours, "Feed build is stale or dated in the future")
@@ -38,16 +38,17 @@ def check(max_age_hours=8, expected=None):
     d.require(set(health["fileHashes"]) == set(d.FILES) - {"health.json"}, "Unexpected health file set")
     manifest = json.loads(fetch(d.FEEDS + "manifest.json"))
     urls = {f["url"] for f in manifest["feeds"]} | {d.FEEDS + f for f in health["fileHashes"]}
+    bundle = {"health.json": health}
     for url in sorted(urls):
         name = url.removeprefix(d.FEEDS)
         d.require(name in d.FILES and url == d.FEEDS + name, "Unexpected advertised URL")
         raw = fetch(url)
         if name != "health.json":
             d.require(hashlib.sha256(raw).hexdigest() == health["fileHashes"][name], "Published hash mismatch: " + name)
-        if name.endswith(".json"):
-            json.loads(raw)
+        bundle[name] = json.loads(raw) if name.endswith(".json") else raw.decode("utf-8")
         if expected:
             d.require(raw == (Path(expected) / name).read_bytes(), "Deployment mismatch: " + name)
+    d.validate(bundle)
     print(json.dumps({"status": "healthy", "ageHours": round(age, 2), "counts": health["counts"]}))
     return health
 
@@ -66,7 +67,7 @@ def baseline(candidate, bootstrap=False):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--expected")
-    p.add_argument("--max-age-hours", type=float, default=8)
+    p.add_argument("--max-age-hours", type=float, default=36)
     p.add_argument("--baseline")
     p.add_argument("--bootstrap", action="store_true")
     args = p.parse_args()

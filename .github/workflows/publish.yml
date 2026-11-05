@@ -1,4 +1,5 @@
 name: Refresh and publish discovery feeds
+run-name: ${{ github.event.schedule == '0 3 * * *' && 'Discovery refresh (3 a.m. Eastern)' || github.event.schedule == '0 6 * * *' && 'Discovery backup (6 a.m. Eastern)' || 'Discovery refresh (on demand)' }}
 on:
   workflow_dispatch:
     inputs:
@@ -9,19 +10,47 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/**'
+      - 'scripts/discovery.py'
       - 'data/**'
-      - '.github/workflows/publish.yml'
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '0 3 * * *'
+      timezone: America/New_York
+    - cron: '0 6 * * *'
+      timezone: America/New_York
 permissions:
   contents: read
 concurrency:
   group: discovery-pages
   cancel-in-progress: false
 jobs:
-  build:
+  schedule-gate:
     if: github.ref == 'refs/heads/main' && vars.DISCOVERY_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      proceed: ${{ steps.decision.outputs.proceed }}
+    steps:
+      - if: github.event.schedule == '0 6 * * *'
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Check overnight result before backup
+        id: decision
+        env:
+          IS_BACKUP: ${{ github.event.schedule == '0 6 * * *' }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$IS_BACKUP" = "true" ]; then
+            python3 scripts/check_backup.py
+          else
+            echo 'proceed=true' >> "$GITHUB_OUTPUT"
+          fi
+  build:
+    needs: schedule-gate
+    if: needs.schedule-gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
