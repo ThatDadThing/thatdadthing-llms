@@ -248,8 +248,7 @@ def load_sitemap_approval():
     if not path.exists():
         return {}
     approval = json.loads(path.read_text(encoding="utf-8"))
-    allowed = {("product", "10303470764224", SITE + "/products/dont-let-it-hit-ya-t-shirt"),
-               ("article", "636362096832", SITE + "/blogs/dad-a-pedia/lovably-unhinged")}
+    allowed = {("product", "10327641194688", SITE + "/products/i-bought-the-album-t-shirt")}
     require(approval.get("schemaVersion") == 1, "Invalid sitemap approval schema")
     start, end = timestamp(approval["approvedAt"]), timestamp(approval["expiresAt"])
     require(dt.timedelta(0) < end - start <= dt.timedelta(hours=24), "Sitemap approval exceeds 24 hours")
